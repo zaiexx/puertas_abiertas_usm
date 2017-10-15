@@ -37,7 +37,21 @@ class InscripcionesController extends Controller
     {
      
         $input = $request->all();
-        dd($input);
+        $rut = $input["rut"];
+        $id_actividad = $input["id_actividad"];
+
+        $alumno = \App\Alumno::where("rut",$rut)->first();
+        $id_alumno = $alumno->id_alumno;
+
+
+        $model = new \App\ActividadInscrito;
+
+        $model->alumno_id = $id_alumno;
+        $model->actividad_id = $id_actividad;
+
+        $model->save();
+
+        return redirect()->route('inscripciones.show',array($rut))->with('message', 'Inscrito Exitosamente');
 
     }
 
