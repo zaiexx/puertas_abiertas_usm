@@ -20,13 +20,6 @@ class Actividad extends Model
 
  	    return $this->cupos - count($this->inscritos);
     }
-    
-
-
- 	public function cuposTotales() {
- 	    return 16;
-    }
-    
 
 	public function horario_inicio() {
 
@@ -34,19 +27,16 @@ class Actividad extends Model
 
     }
 
-
 	public function horario_termino() {
 
         return $this->hasOne('App\Horario','hora_inicio');
 
     }
 
-
 	public function inscritos() {
 
         return $this->belongsToMany('App\Alumno','actividades_inscritos');
 
     }
-
-
+    
 }
