@@ -15,7 +15,21 @@ class ActividadesController extends Controller
      */
     public function index()
     {
-        //
+        $actividades = \App\Actividad::all();
+        $arr_actividades = array();
+     
+        $i = 0;
+
+        foreach ($actividades as $actividad) {
+
+            $horario_inicio = $actividad->horario_inicio;
+            $horario_termino = $actividad->horario_termino;
+            
+            $arr_actividades[$actividad->id_actividad] = array($actividad->nombre_actividad, $actividad->descripcion, $hora_inicio,
+                                                               $hora_termino, $actividad->cupos, $actividad->sobre_cupos, ++$i);
+        }
+
+        return view('actividades.index')->with('actividades',$arr_actividades);
     }
 
     /**
@@ -42,7 +56,7 @@ class ActividadesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $i
      * @return \Illuminate\Http\Response
      */
     public function show($id)

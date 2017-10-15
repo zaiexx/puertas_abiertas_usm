@@ -14,7 +14,7 @@ class CreateEventosInscritosTable extends Migration
     public function up()
     {
         Schema::create('eventos_inscritos', function (Blueprint $table) {
-            $table->increments('eventos_inscritos');
+            $table->increments('id_evento_inscrito');
             $table->integer('evento_id')->unsigned();
             $table->integer('alumno_id')->unsigned();
             $table->integer('horario_uno_id')->unsigned();

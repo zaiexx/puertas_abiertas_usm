@@ -33,7 +33,7 @@ class AddForeignActividadesEventos extends Migration
      */
     public function down()
     {
-        Schema::table('eventos_inscritos', function (Blueprint $table) {
+        Schema::table('actividades_eventos', function (Blueprint $table) {
             $table->dropForeign('actividades_eventos_evento_id_foreign');
             $table->dropForeign('actividades_eventos_actividad_id_foreign');
         });
