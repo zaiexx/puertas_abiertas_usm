@@ -37,11 +37,21 @@
             @if(count($actividades))
 
                 @foreach ($actividades as $index => $actividad)
+                    
+
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="card">
                             <div class="body bg-red">
                                 {{$actividad->nombre_actividad}}
                                 <span class="badge">{{$actividad->cuposTotales()}}</span>
+
+                                {!! Form::open(['route' => 'inscripciones.store']) !!}          
+                                {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
+                                {{ Form::hidden('rut', $alumno[0]->rut) }}
+                                {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
+                                {!! Form::close() !!}
+
+
                             </div>
                         </div>
                     </div>
