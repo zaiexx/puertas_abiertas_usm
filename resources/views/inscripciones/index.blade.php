@@ -62,8 +62,14 @@
                                             {!! Form::close() !!}
 
 
-                                        </div>
-                                </div>
+                                {!! Form::open(['route' => 'inscripciones.desinscribir']) !!}          
+                                    {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
+                                    {{ Form::hidden('rut', $alumno[0]->rut) }}
+                                    {!! Form::submit('Desinscibir', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
+                                {!! Form::close() !!}
+
+
+                            </div>
                         </div>
                         @endforeach
 

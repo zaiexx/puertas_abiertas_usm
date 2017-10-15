@@ -23,13 +23,13 @@ class Actividad extends Model
 
 	public function horario_inicio() {
 
-        return $this->hasOne('App\Horario','hora_inicio');
+        return $this->hasOne('App\Horario','id_horario','hora_inicio_id');
 
     }
 
 	public function horario_termino() {
 
-        return $this->hasOne('App\Horario','hora_inicio');
+        return $this->hasOne('App\Horario','id_horario','hora_termino_id');
 
     }
 

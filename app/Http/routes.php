@@ -32,9 +32,14 @@ Route::resource('/actividades','ActividadesController');
 
 
 Route::resource('dashboard','DashboardController');
-Route::resource('inscripciones','InscripcionesController');
 
+Route::post('inscripciones/desinscribir',
+	['as' => 'inscripciones.desinscribir', 'uses' => 'InscripcionesController@postDesinscribir'
+	]);
+
+Route::resource('inscripciones','InscripcionesController');
 
 Route::post('inscripciones/procesar',
 	['as' => 'inscripciones.procesar', 'uses' => 'InscripcionesController@postProcesar'
 	]);
+

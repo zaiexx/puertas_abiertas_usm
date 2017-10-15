@@ -17,4 +17,12 @@ class Alumno extends Model
  	protected $guarded = ['deleted_at'];
 
 
+
+	public function actividades() {
+
+        return $this->belongsToMany('App\Actividad','actividades_inscritos')->withPivot('id_actividad_inscrito');
+
+    }
+
+
 }
