@@ -67,7 +67,7 @@
     <script>
         var socket = io.connect('http://localhost:8890');
         socket.on('message', function (data) {
-            $( "#messages" ).append( "<p>"+data+"</p>" );
+            $( '[act-id="' + data[0] + '"]' ).html( data[1] );
         });
     </script>
 

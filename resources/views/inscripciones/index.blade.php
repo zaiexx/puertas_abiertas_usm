@@ -9,6 +9,8 @@
 
 @section('content')
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+
     <div class="container-fluid">
         <div class="block-header">
             <h2>Panel de Administración | Inscripcion de {{ $alumno[0]->nombres }}</h2>
@@ -43,7 +45,7 @@
                         <div class="card">
                             <div class="body bg-red">
                                 {{$actividad->nombre_actividad}}
-                                <span class="badge">{{$actividad->cuposTotales()}}</span>
+                                <span class="badge" act-id="{{$actividad->id_actividad}}">{{$actividad->cuposTotales()}}</span>
 
                                 {!! Form::open(['route' => 'inscripciones.store']) !!}          
                                 {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
@@ -63,6 +65,13 @@
 
         </div>
     </div>
+
+    <script>
+        var socket = io.connect('http://localhost:8890');
+        socket.on('message', function (data) {
+            $( '[act-id="' + data[0] + '"]' ).html( data[1] );
+        });
+    </script>
 
 @endsection
 
