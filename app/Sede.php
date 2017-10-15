@@ -14,7 +14,15 @@ class Sede extends Model
 	protected $table = 'sedes';
  	protected $dates = ['deleted_at', 'created_at', 'updated_at'];	
  	protected $fillable = ['nombre_sede', 'direccion','email','telefono'];
- 	protected $guarded = ['deleted_at'];}
+ 	protected $guarded = ['deleted_at'];
 
+
+
+
+	public function eventos() {
+
+        return $this->hasMany('App\Evento', 'id_evento', 'evento_id');
+
+    }
 
 }

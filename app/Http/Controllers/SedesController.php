@@ -15,7 +15,18 @@ class SedesController extends Controller
      */
     public function index()
     {
-        //
+        
+        $sedes = \App\Sede::all();
+
+        $arr_sedes = array();
+     
+        $i = 0;
+
+        foreach ($sedes as $sede) {
+            $arr_sedes[$sede->id_sede] = array($sede->nombre_sede, $sede->direccion, $sede->email, $sede->telefono, ++$i);
+        }
+
+        return view('sedes.index')->with('sedes',$arr_sedes);    
     }
 
     /**
@@ -25,7 +36,7 @@ class SedesController extends Controller
      */
     public function create()
     {
-        //
+        return view('sedes.create');
     }
 
     /**
@@ -36,8 +47,23 @@ class SedesController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        
+        $input = $request->all();
+        $data = array();
+
+        $sede = new \App\Sede;
+
+        $sede->nombre_sede = $input["nombre_sede"];
+        $sede->direccion = $input["direccion"];
+        $sede->email = $input["email"];
+        $sede->telefono = $input["telefono"];
+
+
+        $sede->save();
+
+
+         return redirect('sedes')->with('message', 'Sede agregada con éxito');    
+        }
 
     /**
      * Display the specified resource.

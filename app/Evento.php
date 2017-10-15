@@ -16,5 +16,13 @@ class Evento extends Model
  	protected $fillable = ['nombre_evento','sede_id'];
  	protected $guarded = ['deleted_at'];
 
+
+	
+	public function sedes() {
+
+    	return $this->belongsTo('App\Sede');
+    }
+
+
 }
 

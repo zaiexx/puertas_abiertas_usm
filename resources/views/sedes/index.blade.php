@@ -36,7 +36,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Todas las sedes ingresadas &nbsp; <a href="{!! action('SedesController@create') !!}" title="Agregar Sede" class ="btn bg-purple btn-xs waves-effect"><i class="material-icons">playlist_add</i>Agregar Sede</a>
+                            <h2>Todas los Sedes &nbsp; <a href="{!! action('SedesController@create') !!}" title="Agregar Sede" class ="btn bg-purple btn-xs waves-effect"><i class="material-icons">playlist_add</i>Agregar Sede</a>
 
                             </h2>
                             <ul class="header-dropdown m-r--5">
@@ -46,59 +46,55 @@
                                     </a>
                                     <ul class="dropdown-menu pull-right">
                                         <li> <a href="{!! action('SedesController@create') !!}"> Agregar Sede</a></li>
-                                        <li><a href="javascript:void(0);">Sedes Activas</a></li>
-                                        <li><a href="javascript:void(0);">Sedes Inactivas</a></li>
+                                        <li><a href="javascript:void(0);">Sedes Activos</a></li>
+                                        <li><a href="javascript:void(0);">Sedes Inactivos</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                         <div class="body">
-
-                            @if(count($sedes) > 0)
+                        @if(count($sedes) > 0)
                             <div class="table-responsive">
-                            <table class="table table-hover dashboard-task-infos">
+                                <table class="table table-hover dashboard-task-infos">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Nombre</th>
+                                            <th>Nombre Sede</th>
                                             <th>Dirección</th>
                                             <th>Email</th>
                                             <th>Teléfono</th>
                                         </tr>
                                     </thead>
-
-                                <tbody>
-                                    @foreach ($sedes as $id_sede => $sede)
-                                        @if ($sede[2] % 2 == 0)
-                                            <tr class="even pointer">
-                                        @else
-                                            <tr class="odd pointer">
-                                        @endif
-                                            
-                                            <td class="a-center ">
-                                                {{$sede[2] + 1}}
-                                            </td>
-
+                                    <tbody>
+                                        @foreach ($sedes as $id_sede => $sede)
+                                            @if ($sede[4] % 2 == 0)
+                                                <tr class="even pointer">
+                                            @else
+                                                <tr class="odd pointer">
+                                            @endif
                                             <td><span class="label bg-purple">{{$sede[0]}}</span></td>
                                             <td>{{$sede[1]}}</td>
-
+                                            <td>{{$sede[2]}}</td>
+                                            <td>{{$sede[3]}}</td>
                                             <td>
                                                 <a href="{!! action('SedesController@show', [$id_sede]) !!}"  title="Ver" class ="btn btn-primary btn-xs"><i class="material-icons">remove_red_eye</i></a>
                                                 <a href="{!! action('SedesController@edit', [$id_sede]) !!}"  title="Editar" class ="btn btn-info btn-xs"><i class="material-icons">mode_edit</i></a>
                                                 <a href="#"  title="Borrar" class ="btn btn-danger btn-xs"><i class="material-icons">delete</i></a>
-                                            </td>
+                                            </td>                                                   
                                         </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                                    @endforeach
+                                    </tbody>
+                                </table>
                             </div>
+
                             @else
-                                <h3> No se han registrado sedes </h3>
+                                <h3> No se han resgistrado Sedes </h3>
                             @endif
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+            
 @endsection
 
 
@@ -107,3 +103,6 @@
     @include('sedes.js')
 
 @endsection 
+
+
+
