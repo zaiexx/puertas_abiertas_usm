@@ -15,4 +15,8 @@ class Actividad extends Model
  	protected $dates = ['deleted_at', 'created_at', 'updated_at'];	
  	protected $fillable = ['nombre_actividad','descripcion','hora_inicio_id','hora_termino_id','cupos','sobre_cupos'];
  	protected $guarded = ['deleted_at'];
+
+ 	public function cuposTotales() {
+ 	    return 1;
+    }
 }
