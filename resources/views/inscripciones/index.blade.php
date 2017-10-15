@@ -44,32 +44,33 @@
                         <div class="card">
                             @if($actividad->cuposTotales() <= 0)
                                 <div class="body bg-grey">
-                                    @else
-                                        <div class="body bg-red">
-                                            @endif
-                                            {{$actividad->nombre_actividad}}
-                                            <span class="badge"
-                                                  act-id="{{$actividad->id_actividad}}">{{$actividad->cuposTotales()}}</span>
+                            @else
+                                <div class="body bg-red">
+                            @endif
+                                    {{$actividad->nombre_actividad}}
+                                    <span class="badge" act-id="{{$actividad->id_actividad}}">{{$actividad->cuposTotales()}}</span>
 
-                                            {!! Form::open(['route' => 'inscripciones.store']) !!}
-                                            {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
-                                            {{ Form::hidden('rut', $alumno[0]->rut) }}
-                                            @if($actividad->cuposTotales() <= 0)
-                                                {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect", "disabled" => "disabled"]) !!}
-                                            @else
-                                                {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
-                                            @endif
-                                            {!! Form::close() !!}
-
-
-                                {!! Form::open(['route' => 'inscripciones.desinscribir']) !!}          
+                                    {!! Form::open(['route' => 'inscripciones.store']) !!}
                                     {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
                                     {{ Form::hidden('rut', $alumno[0]->rut) }}
-                                    {!! Form::submit('Desinscibir', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
-                                {!! Form::close() !!}
+                                    @if($actividad->cuposTotales() <= 0)
+                                        {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect", "disabled" => "disabled"]) !!}
+                                    @else
+                                        {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
+                                    @endif
+                                    {!! Form::close() !!}
 
 
-                            </div>
+                                    {!! Form::open(['route' => 'inscripciones.desinscribir']) !!}
+                                        {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
+                                        {{ Form::hidden('rut', $alumno[0]->rut) }}
+                                        {!! Form::submit('Desinscibir', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
+                                    {!! Form::close() !!}
+
+
+                                </div>
+                        </div>
+
                         </div>
                         @endforeach
 
@@ -77,7 +78,6 @@
                             <h3> No se han resgistrado Actividades </h3>
                         @endif
 
-                    </div>
         </div>
 
         <script>
