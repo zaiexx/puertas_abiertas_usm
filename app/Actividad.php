@@ -18,7 +18,7 @@ class Actividad extends Model
  	
  	public function cuposTotales() {
 
- 	    return 1;
+ 	    return $this->cupos - count($this->inscritos);
     }
     
 

@@ -6,6 +6,7 @@ use App\Actividad;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Redis;
 
 class DashboardController extends Controller
 {
@@ -26,7 +27,8 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        $redis = Redis::connection();
+        $redis->publish('message', 'dededemas');
     }
 
     /**
