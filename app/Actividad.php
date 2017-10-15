@@ -17,17 +17,21 @@ class Actividad extends Model
  	protected $guarded = ['deleted_at'];
 
 
+ 	public function cuposTotales() {
+ 	    return 16;
+    }
+    
 
 	public function horario_inicio() {
 
-        return $this->hasOne('App\Horario','horario_inicio_id');
+        return $this->hasOne('App\Horario','hora_inicio');
 
     }
 
 
 	public function horario_termino() {
 
-        return $this->hasMany('App\Horario','horario_termino_id');
+        return $this->hasOne('App\Horario','hora_inicio');
 
     }
 

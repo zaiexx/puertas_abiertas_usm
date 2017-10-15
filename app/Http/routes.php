@@ -33,3 +33,8 @@ Route::resource('/actividades','ActividadesController');
 
 Route::resource('dashboard','DashboardController');
 Route::resource('inscripciones','InscripcionesController');
+
+
+Route::post('inscripciones/procesar',
+	['as' => 'inscripciones.procesar', 'uses' => 'InscripcionesController@postProcesar'
+	]);

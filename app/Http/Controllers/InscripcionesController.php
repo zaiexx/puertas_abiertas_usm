@@ -15,7 +15,6 @@ class InscripcionesController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -47,7 +46,10 @@ class InscripcionesController extends Controller
      */
     public function show($id)
     {
-        //
+     
+        $alumno = \App\Alumno::where("rut",$id)->get();
+        return view('inscripciones.index')->with('actividades', \App\Actividad::all())
+                                          ->with('alumno',$alumno);
     }
 
     /**
@@ -82,5 +84,14 @@ class InscripcionesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function postProcesar (Request $request) {
+
+        $input = $request->all();
+        $rut = $input["rut"];
+        return redirect()->route('inscripciones.show',array($rut))->with('message', 'hahahah');
+
     }
 }
