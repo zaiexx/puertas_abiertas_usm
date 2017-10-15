@@ -71,7 +71,8 @@ class EventosController extends Controller
 
 
 
-         return redirect('eventos')->with('message', 'Evento agregado con éxito');        }
+         return redirect('eventos')->with('message', 'Evento agregado con éxito');       
+    }
 
     /**
      * Display the specified resource.

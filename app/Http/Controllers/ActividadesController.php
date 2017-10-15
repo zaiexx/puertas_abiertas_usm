@@ -22,8 +22,8 @@ class ActividadesController extends Controller
 
         foreach ($actividades as $actividad) {
 
-            $hora_inicio = $actividad->horario_inicio;
-            $hora_termino = $actividad->horario_termino;
+            $hora_inicio = $actividad->horario_inicio->hora_inicio;
+            $hora_termino = $actividad->horario_termino->hora_termino;
             
             $arr_actividades[$actividad->id_actividad] = array($actividad->nombre_actividad, $actividad->descripcion, $hora_inicio,
                                                                $hora_termino, $actividad->cupos, $actividad->sobre_cupos, ++$i);
@@ -39,7 +39,18 @@ class ActividadesController extends Controller
      */
     public function create()
     {
-        //
+     
+
+        $horarios = \App\Horario::all();
+
+        $arr_horarios = array();
+
+        foreach ($horarios as $horario) {
+            $arr_horarios[$horario->id_horario] = $horario->nombre;
+        }
+
+        return view('actividades.create')->with('horarios',$arr_horarios);
+
     }
 
     /**
@@ -50,7 +61,31 @@ class ActividadesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     
+
+        $input = $request->all();
+        dd($input);
+
+
+        $data = array();
+
+        $actividad = new \App\Actividad;
+
+        $actividad->nombre_actividad = $input["nombre_actividad"];
+        $actividad->descripcion = $input["descripcion"];
+        $actividad->nombre_actividad = $input["nombre_actividad"];
+        $actividad->nombre_actividad = $input["nombre_actividad"];
+        $actividad->nombre_actividad = $input["nombre_actividad"];
+        $actividad->nombre_actividad = $input["nombre_actividad"];
+
+        $sede = \App\Sede::find($input["sede_id"]);
+        $sede->eventos()->save($evento);
+
+
+
+
+         return redirect('eventos')->with('message', 'Evento agregado con éxito');
+
     }
 
     /**

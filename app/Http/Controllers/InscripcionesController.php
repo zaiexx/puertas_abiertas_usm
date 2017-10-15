@@ -111,4 +111,28 @@ class InscripcionesController extends Controller
         return redirect()->route('inscripciones.show',array($rut))->with('message', 'hahahah');
 
     }
+
+
+    public function postDesinscribir (Request $request) {
+
+        $input = $request->all();
+        $rut = $input["rut"];
+
+        $alumno = \App\Alumno::where("rut",$input["rut"])->first();
+        $inscripcion = $alumno->actividades()->where('id_actividad',$input["id_actividad"])->first();
+ 
+        $id_inscripcion = $inscripcion->pivot->id_actividad_inscrito;
+
+
+
+        $inscripcion = \App\ActividadInscrito::find($id_inscripcion);
+
+        $inscripcion->delete();
+
+        return redirect()->route('inscripciones.show',array($rut))->with('message', 'hahahah');
+
+    }
+
+
+
 }

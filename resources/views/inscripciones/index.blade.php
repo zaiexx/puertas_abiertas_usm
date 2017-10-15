@@ -46,9 +46,16 @@
                                 <span class="badge">{{$actividad->cuposTotales()}}</span>
 
                                 {!! Form::open(['route' => 'inscripciones.store']) !!}          
-                                {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
-                                {{ Form::hidden('rut', $alumno[0]->rut) }}
-                                {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
+                                    {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
+                                    {{ Form::hidden('rut', $alumno[0]->rut) }}
+                                    {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
+                                {!! Form::close() !!}
+
+
+                                {!! Form::open(['route' => 'inscripciones.desinscribir']) !!}          
+                                    {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
+                                    {{ Form::hidden('rut', $alumno[0]->rut) }}
+                                    {!! Form::submit('Desinscibir', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
                                 {!! Form::close() !!}
 
 

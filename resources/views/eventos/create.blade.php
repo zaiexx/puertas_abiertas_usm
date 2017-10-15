@@ -70,7 +70,6 @@
                                             @endif
                                     </div>
                                 </div>
-                                </div>
 
                                   <div class="form-group">
                                     {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
