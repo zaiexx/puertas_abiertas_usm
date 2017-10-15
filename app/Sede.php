@@ -21,7 +21,7 @@ class Sede extends Model
 
 	public function eventos() {
 
-        return $this->hasMany('App\Evento', 'id_evento', 'evento_id');
+        return $this->hasMany('App\Evento');
 
     }
 

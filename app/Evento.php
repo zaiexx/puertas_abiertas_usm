@@ -13,14 +13,14 @@ class Evento extends Model
 	protected $primaryKey = 'id_evento';
 	protected $table = 'eventos';
  	protected $dates = ['deleted_at', 'created_at', 'updated_at'];	
- 	protected $fillable = ['nombre_evento','sede_id'];
+ 	protected $fillable = ['nombre_evento'];
  	protected $guarded = ['deleted_at'];
 
 
 	
-	public function sedes() {
+	public function sedes () {
 
-    	return $this->belongsTo('App\Sede');
+    	return $this->belongsTo('App\Sede','sede_id');
     }
 
 

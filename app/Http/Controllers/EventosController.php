@@ -17,18 +17,14 @@ class EventosController extends Controller
     {
 
         $eventos = \App\Evento::all();
-
-        $sede = $eventos->sedes->get();
-
-        dd($sede);
-
         $arr_eventos = array();
      
         $i = 0;
 
         foreach ($eventos as $evento) {
+            $sede = $evento->sedes;
+            $arr_eventos[$evento->id_evento] = array($evento->nombre_evento, $sede->nombre_sede, ++$i);
 
-            $arr_eventos[$evento->id_evento] = array($evento->nombre_evento, ++$i);
         }
 
         return view('eventos.index')->with('eventos',$arr_eventos);
@@ -68,10 +64,11 @@ class EventosController extends Controller
         $evento = new \App\Evento;
 
         $evento->nombre_evento = $input["nombre_evento"];
-        $evento->sede_id = $input["sede_id"];
-        
 
-        $evento->save();
+        $sede = \App\Sede::find($input["sede_id"]);
+        $sede->eventos()->save($evento);
+
+
 
 
          return redirect('eventos')->with('message', 'Evento agregado con éxito');        }
