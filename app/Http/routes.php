@@ -29,3 +29,7 @@ Route::get('/home', 'HomeController@index');
 Route::resource('/sedes','SedesController');
 Route::resource('/eventos','EventosController');
 Route::resource('/actividades','ActividadesController');
+
+
+Route::resource('dashboard','DashboardController');
+Route::resource('inscripciones','InscripcionesController');
