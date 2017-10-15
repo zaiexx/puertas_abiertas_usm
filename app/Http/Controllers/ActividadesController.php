@@ -22,8 +22,8 @@ class ActividadesController extends Controller
 
         foreach ($actividades as $actividad) {
 
-            $horario_inicio = $actividad->horario_inicio;
-            $horario_termino = $actividad->horario_termino;
+            $hora_inicio = $actividad->horario_inicio;
+            $hora_termino = $actividad->horario_termino;
             
             $arr_actividades[$actividad->id_actividad] = array($actividad->nombre_actividad, $actividad->descripcion, $hora_inicio,
                                                                $hora_termino, $actividad->cupos, $actividad->sobre_cupos, ++$i);
