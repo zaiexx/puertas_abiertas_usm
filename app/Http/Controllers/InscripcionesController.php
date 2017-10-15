@@ -128,7 +128,10 @@ class InscripcionesController extends Controller
 
         $inscripcion = \App\ActividadInscrito::where("alumno_id",$id_alumno)->where("actividad_id",$id_actividad);
 
-        $inscripcion->delete();
+        if($inscripcion->forceDelete()) {
+            $redis = Redis::connection();
+            $redis->publish('message', $id_actividad . '-' . \App\Actividad::find($id_actividad)->cuposTotales());
+        }
 
 
         
