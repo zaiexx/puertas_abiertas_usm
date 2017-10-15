@@ -39,39 +39,63 @@
             @if(count($actividades))
 
                 @foreach ($actividades as $index => $actividad)
-                    
 
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 curso">
                         <div class="card">
-                            <div class="body bg-red">
-                                {{$actividad->nombre_actividad}}
-                                <span class="badge" act-id="{{$actividad->id_actividad}}">{{$actividad->cuposTotales()}}</span>
+                            @if($actividad->cuposTotales() <= 0)
+                                <div class="body bg-grey">
+                                    @else
+                                        <div class="body bg-red">
+                                            @endif
+                                            {{$actividad->nombre_actividad}}
+                                            <span class="badge"
+                                                  act-id="{{$actividad->id_actividad}}">{{$actividad->cuposTotales()}}</span>
 
-                                {!! Form::open(['route' => 'inscripciones.store']) !!}          
-                                {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
-                                {{ Form::hidden('rut', $alumno[0]->rut) }}
-                                {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
-                                {!! Form::close() !!}
+                                            {!! Form::open(['route' => 'inscripciones.store']) !!}
+                                            {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
+                                            {{ Form::hidden('rut', $alumno[0]->rut) }}
+                                            @if($actividad->cuposTotales() <= 0)
+                                                {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect", "disabled" => "disabled"]) !!}
+                                            @else
+                                                {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
+                                            @endif
+                                            {!! Form::close() !!}
 
 
-                            </div>
+                                        </div>
+                                </div>
                         </div>
+                        @endforeach
+
+                        @else
+                            <h3> No se han resgistrado Actividades </h3>
+                        @endif
+
                     </div>
-                @endforeach
-
-            @else
-                <h3> No se han resgistrado Actividades </h3>
-            @endif
-
         </div>
-    </div>
 
-    <script>
-        var socket = io.connect('http://localhost:8890');
-        socket.on('message', function (data) {
-            $( '[act-id="' + data[0] + '"]' ).html( data[1] );
-        });
-    </script>
+        <script>
+            var socket = io.connect('http://localhost:8890');
+            socket.on('message', function (data) {
+
+                var $badge = $('[act-id="' + data[0] + '"]');
+                $badge.html(data[1]);
+
+                if (data[1] <= 0) {
+                    $badge.closest('.body')
+                        .removeClass('bg-red')
+                        .addClass('bg-grey')
+                        .find('.btn')
+                        .prop('disabled', true);
+                } else {
+                    $badge.closest('.body')
+                        .addClass('bg-red')
+                        .removeClass('bg-grey')
+                        .find('.btn')
+                        .prop('disabled', false);
+                }
+            });
+        </script>
 
 @endsection
 
