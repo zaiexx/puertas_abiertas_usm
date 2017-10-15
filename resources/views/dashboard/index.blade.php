@@ -2,7 +2,7 @@
 
 @section('header')
 
-    @include('inscripciones.header')
+    @include('dashboard.header')
 
 @endsection
 
@@ -13,7 +13,7 @@
 
     <div class="container-fluid">
         <div class="block-header">
-            <h2>Panel de Administración | Inscripcion de {{ $alumno[0]->nombres }}</h2>
+            <h2>Panel de Administración | Cursos</h2>
         </div>
 
         <div class="row clearfix">
@@ -44,61 +44,50 @@
                         <div class="card">
                             @if($actividad->cuposTotales() <= 0)
                                 <div class="body bg-grey">
-                            @else
-                                <div class="body bg-red">
-                            @endif
-                                    {{$actividad->nombre_actividad}}
-                                    <span class="badge" act-id="{{$actividad->id_actividad}}">{{$actividad->cuposTotales()}}</span>
-
-                                    {!! Form::open(['route' => 'inscripciones.store']) !!}
-                                    {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
-                                    {{ Form::hidden('rut', $alumno[0]->rut) }}
-                                    @if($actividad->cuposTotales() <= 0)
-                                        {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect", "disabled" => "disabled"]) !!}
                                     @else
-                                        {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
-                                    @endif
-                                    {!! Form::close() !!}
+                                        <div class="body bg-red">
+                                            @endif
 
-
-                                    {!! Form::open(['route' => 'inscripciones.desinscribir']) !!}
-                                        {{ Form::hidden('id_actividad', $actividad->id_actividad) }}
-                                        {{ Form::hidden('rut', $alumno[0]->rut) }}
-                                        {!! Form::submit('Desinscibir', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
-                                    {!! Form::close() !!}
-
-
+                                            {{$actividad->nombre_actividad}}
+                                            <span class="badge"
+                                                  act-id="{{$actividad->id_actividad}}">{{$actividad->cuposTotales()}}</span>
+                                        </div>
                                 </div>
                         </div>
 
-                        </div>
                         @endforeach
 
                         @else
                             <h3> No se han resgistrado Actividades </h3>
                         @endif
 
+                    </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div id="messages"></div>
+                </div>
+            </div>
         </div>
 
         <script>
             var socket = io.connect('http://localhost:8890');
             socket.on('message', function (data) {
-
                 var $badge = $('[act-id="' + data[0] + '"]');
                 $badge.html(data[1]);
+
+                console.log($badge);
 
                 if (data[1] <= 0) {
                     $badge.closest('.body')
                         .removeClass('bg-red')
-                        .addClass('bg-grey')
-                        .find('.btn')
-                        .prop('disabled', true);
+                        .addClass('bg-grey');
                 } else {
                     $badge.closest('.body')
                         .addClass('bg-red')
-                        .removeClass('bg-grey')
-                        .find('.btn')
-                        .prop('disabled', false);
+                        .removeClass('bg-grey');
                 }
             });
         </script>
@@ -108,6 +97,9 @@
 
 @section('js')
 
-    @include('inscripciones.js')
+    @include('dashboard.js')
 
 @endsection
+ 
+ 
+ 

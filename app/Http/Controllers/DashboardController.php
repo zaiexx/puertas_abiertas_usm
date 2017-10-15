@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Actividad;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 
 class DashboardController extends Controller
 {
@@ -15,7 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.index')->with('actividades', Actividad::all());
     }
 
     /**
@@ -25,7 +24,6 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Redis;
 
 class InscripcionesController extends Controller
 {
@@ -49,7 +50,10 @@ class InscripcionesController extends Controller
         $model->alumno_id = $id_alumno;
         $model->actividad_id = $id_actividad;
 
-        $model->save();
+        if($model->save()) {
+            $redis = Redis::connection();
+            $redis->publish('message', $id_actividad . '-' . \App\Actividad::find($id_actividad)->cuposTotales());
+        }
 
         return redirect()->route('inscripciones.show',array($rut))->with('message', 'Inscrito Exitosamente');
 
@@ -124,7 +128,10 @@ class InscripcionesController extends Controller
 
         $inscripcion = \App\ActividadInscrito::where("alumno_id",$id_alumno)->where("actividad_id",$id_actividad);
 
-        $inscripcion->delete();
+        if($inscripcion->forceDelete()) {
+            $redis = Redis::connection();
+            $redis->publish('message', $id_actividad . '-' . \App\Actividad::find($id_actividad)->cuposTotales());
+        }
 
 
         
