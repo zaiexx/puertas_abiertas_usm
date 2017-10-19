@@ -219,7 +219,6 @@ class InscripcionesController extends Controller
     public function postConsultar (InscripcionesForm $request) {
 
         $input = $request->all();
-
         $alumno = \App\Alumno::where('rut',$input['rut'])->first();
 
         if ($alumno != null) {

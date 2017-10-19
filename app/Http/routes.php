@@ -25,7 +25,10 @@ Route::get('register', [
 
 Route::post('register', 'Auth\AuthController@postRegister');
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', [
+	'as' => 'home.index', 'uses'=>'HomeController@index'
+	]);
+
 Route::get('/home/{rut}',[
 	'as' => 'home.show', 'uses' => 'HomeController@show'
 	]);

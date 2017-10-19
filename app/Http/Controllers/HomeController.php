@@ -31,7 +31,7 @@ class HomeController extends Controller
     {
 
         $alumno = \App\Alumno::where('rut',$rut)->first();
-
+        dd($alumno);
         if ($alumno != null) {
             $id_alumno = $alumno->id_alumno;
             $actividadesEventosInscritos = \App\ActividadEventoInscrito::where('alumno_id',$id_alumno)->get();
