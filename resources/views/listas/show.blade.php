@@ -58,6 +58,7 @@
                                 <table class="table table-hover dashboard-task-infos">
                                     <thead>
                                         <tr>
+                                            <th>N° Inscrito </th>
                                             <th>Rut Alumno</th>
                                             <th>Nombres</th>
                                             <th>Apellido Paterno</th>
@@ -71,6 +72,7 @@
                                             @else
                                                 <tr class="odd pointer">
                                             @endif
+                                            <td>{{$alumno[4]}}</td>
                                             <td><span class="label bg-purple">{{$alumno[0]}}</span></td>
                                             <td>{{$alumno[1]}}</td>
                                             <td>{{$alumno[2]}}</td>
