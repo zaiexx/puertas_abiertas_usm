@@ -15,5 +15,6 @@ class Locacion extends Model
  	protected $dates = ['deleted_at', 'created_at', 'updated_at'];	
  	protected $fillable = ['nombre_locacion','region','comuna','tipo_locacion'];
  	protected $guarded = ['deleted_at'];
+ 	
 }
  

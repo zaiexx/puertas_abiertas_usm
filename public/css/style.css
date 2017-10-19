@@ -2121,6 +2121,11 @@
   margin-right: 5px;
   margin-bottom: 12px; }
 
+.icon-and-text-button-demo button {
+  margin-right: 5px;
+  margin-bottom: 12px;
+  width: 16.66666666666667%; }
+
 .button-demo ul {
   padding-left: 0; }
   .button-demo ul li {
@@ -2337,7 +2342,14 @@
   .navbar .dropdown-menu {
     margin-left: -50px; }
   .navbar .js-right-sidebar {
-    margin-top: 15px; } }
+    margin-top: 15px; }
+  .dt-buttons {
+    float: none !important;
+    text-align: center;
+    margin-bottom: 15px; }
+  .panel-switch-btn {
+    top: 12px;
+    right: 0 !important; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .navbar > .container .navbar-brand,
@@ -2486,6 +2498,10 @@ section.content {
     font-size: 20px;
     position: relative;
     top: 3px; }
+  .btn:not(.btn-link):not(.btn-circle) span {
+    position: relative;
+    top: -2px;
+    margin-left: 3px; }
 
 .btn-warning,
 .btn-warning:hover,
@@ -2811,7 +2827,11 @@ section.content {
   min-height: 50px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   position: relative;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px; }
   .card .card-inside-title {
     margin-top: 25px;
     margin-bottom: 15px;
@@ -2968,6 +2988,8 @@ section.content {
         .card .header h2 small a {
           font-weight: bold;
           color: #777; }
+    .card .header .col-xs-12 h2 {
+      margin-top: 5px; }
   .card .body {
     font-size: 14px;
     color: #555;
@@ -7698,10 +7720,7 @@ fieldset[disabled] .form-control {
 
 /* Login Page ================================== */
 .login-page {
-  background-color: #9C27B0;
-  background-image: url("../images/1.png");
-  background-repeat: repeat-x;
-  height:100%;
+  background-color: #00BCD4;
   padding-left: 0;
   max-width: 360px;
   margin: 5% auto;
@@ -7845,7 +7864,6 @@ fieldset[disabled] .form-control {
 
 .panel-switch-btn {
   position: relative;
-  top: -20px;
   right: 20px;
   z-index: 9; }
   .panel-switch-btn label {
@@ -7938,9 +7956,7 @@ fieldset[disabled] .form-control {
     .dataTables_wrapper input[type="search"]:focus, .dataTables_wrapper input[type="search"]:active {
       border-bottom: 2px solid #1f91f3; }
   .dataTables_wrapper .dt-buttons {
-    position: absolute;
-    top: 0;
-    left: 0; }
+    float: left; }
     .dataTables_wrapper .dt-buttons a.dt-button {
       background-color: #607D8B;
       color: #fff;
@@ -7957,6 +7973,27 @@ fieldset[disabled] .form-control {
       outline: none; }
       .dataTables_wrapper .dt-buttons a.dt-button:active {
         opacity: 0.8; }
+
+.dt-button-info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 400px;
+  text-align: center;
+  background-color: #fff;
+  border: 2px solid #999;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  margin-top: -100px;
+  margin-left: -200px;
+  z-index: 21; }
+  .dt-button-info h2 {
+    color: #777; }
+  .dt-button-info div {
+    color: #777;
+    margin-bottom: 20px; }
 
 /* Light Gallery ================================ */
 .lg-outer .lg-thumb-item,

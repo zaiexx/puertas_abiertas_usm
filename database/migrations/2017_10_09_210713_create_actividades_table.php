@@ -17,11 +17,8 @@ class CreateActividadesTable extends Migration
             $table->increments('id_actividad');
             $table->string('nombre_actividad');
             $table->string('descripcion');
-            $table->integer('hora_inicio_id')->unsigned();
-            $table->integer('hora_termino_id')->unsigned();
-            $table->integer('cupos');
-            $table->integer('sobre_cupos');
-            
+            $table->string('tipo_actividad');
+
             $table->timestamps();
             $table->softDeletes();
         });   

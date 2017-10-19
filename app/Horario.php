@@ -12,7 +12,8 @@ class Horario extends Model
 	protected $primaryKey = 'id_horario';
 	protected $table = 'horarios';
  	protected $dates = ['deleted_at', 'created_at', 'updated_at'];	
- 	protected $fillable = ['nombre','hora_inicio','hora_termino'];
+ 	protected $times = ['horario'];
+ 	protected $fillable = ['nombre','horario'];
  	protected $guarded = ['deleted_at'];
 }
 

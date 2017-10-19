@@ -48,9 +48,9 @@
                                         <div class="body bg-red">
                                             @endif
 
-                                            {{$actividad->nombre_actividad}}
+                                            {{$actividad->actividades->nombre_actividad}}
                                             <span class="badge"
-                                                  act-id="{{$actividad->id_actividad}}">{{$actividad->cuposTotales()}}</span>
+                                                  act-id="{{$actividad->id_actividad_evento}}">{{$actividad->cuposTotales()}}</span>
                                         </div>
                                 </div>
                         </div>

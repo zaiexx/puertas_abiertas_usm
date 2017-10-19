@@ -23,6 +23,11 @@ class Evento extends Model
     	return $this->belongsTo('App\Sede','sede_id');
     }
 
+    public function actividades () {
+
+    	return $this->hasMany('App\ActividadEvento');
+    }
+
 
 }
 

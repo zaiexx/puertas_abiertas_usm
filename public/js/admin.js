@@ -32,7 +32,9 @@ $.AdminBSB.options = {
         scrollWidth: '4px',
         scrollAlwaysVisible: false,
         scrollBorderRadius: '0',
-        scrollRailBorderRadius: '0'
+        scrollRailBorderRadius: '0',
+        scrollActiveItemWhenPageLoad: true,
+        breakpointWidth: 1170
     },
     dropdownMenu: {
         effectIn: 'fadeIn',
@@ -105,14 +107,11 @@ $.AdminBSB.leftSideBar = {
         Waves.attach('.menu .list a', ['waves-block']);
         Waves.init();
     },
-    setMenuHeight: function () {
+    setMenuHeight: function (isFirstTime) {
         if (typeof $.fn.slimScroll != 'undefined') {
             var configs = $.AdminBSB.options.leftSideBar;
             var height = ($(window).height() - ($('.legal').outerHeight() + $('.user-info').outerHeight() + $('.navbar').innerHeight()));
             var $el = $('.list');
-
-            $el.slimScroll({ destroy: true }).height("auto");
-            $el.parent().find('.slimScrollBar, .slimScrollRail').remove();
 
             $el.slimscroll({
                 height: height + "px",
@@ -122,6 +121,12 @@ $.AdminBSB.leftSideBar = {
                 borderRadius: configs.scrollBorderRadius,
                 railBorderRadius: configs.scrollRailBorderRadius
             });
+
+            //Scroll active menu item when page load, if option set = true
+            if ($.AdminBSB.options.leftSideBar.scrollActiveItemWhenPageLoad) {
+                var activeItemOffsetTop = $('.menu .list li.active')[0].offsetTop
+                if (activeItemOffsetTop > 150) $el.slimscroll({ scrollTo: activeItemOffsetTop + 'px' });
+            }
         }
     },
     checkStatuForResize: function (firstTime) {
@@ -135,7 +140,7 @@ $.AdminBSB.leftSideBar = {
             });
         }
 
-        if (width < 1170) {
+        if (width < $.AdminBSB.options.leftSideBar.breakpointWidth) {
             $body.addClass('ls-closed');
             $openCloseBar.fadeIn();
         }
@@ -275,6 +280,13 @@ $.AdminBSB.input = {
         $('body').on('click', '.form-float .form-line .form-label', function () {
             $(this).parent().find('input').focus();
         });
+
+        //Not blank form
+        $('.form-control').each(function () {
+            if ($(this).val() !== '') {
+                $(this).parents('.form-line').addClass('focused');
+            }
+        });
     }
 }
 //==========================================================================================================================
@@ -330,7 +342,7 @@ $.AdminBSB.dropdownMenu = {
         var effectIn = $.AdminBSB.options.dropdownMenu.effectIn, effectOut = $.AdminBSB.options.dropdownMenu.effectOut;
         var dropdown = $(target), dropdownMenu = $('.dropdown-menu', target);
 
-        if (dropdown.size() > 0) {
+        if (dropdown.length > 0) {
             var udEffectIn = dropdown.data('effect-in');
             var udEffectOut = dropdown.data('effect-out');
             if (udEffectIn !== undefined) { effectIn = udEffectIn; }

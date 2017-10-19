@@ -43,3 +43,12 @@ Route::post('inscripciones/procesar',
 	['as' => 'inscripciones.procesar', 'uses' => 'InscripcionesController@postProcesar'
 	]);
 
+Route::resource('horarios','HorariosController');
+Route::resource('carreras','CarrerasController');
+Route::resource('alumnos','AlumnosController');
+
+Route::post('validacion/procesar',
+	['as' => 'validacion.procesar', 'uses' => 'AsistenciasController@postProcesar'
+	]);
+
+Route::resource('validacion','AsistenciasController');

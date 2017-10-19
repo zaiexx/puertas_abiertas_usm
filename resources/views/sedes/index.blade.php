@@ -36,7 +36,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Todas los Sedes &nbsp; <a href="{!! action('SedesController@create') !!}" title="Agregar Sede" class ="btn bg-purple btn-xs waves-effect"><i class="material-icons">playlist_add</i>Agregar Sede</a>
+                            <h2>Todas las Sedes &nbsp; <a href="{!! action('SedesController@create') !!}" title="Agregar Sede" class ="btn bg-purple btn-xs waves-effect"><i class="material-icons">playlist_add</i>Agregar Sede</a>
 
                             </h2>
                             <ul class="header-dropdown m-r--5">

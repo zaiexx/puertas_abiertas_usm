@@ -19,20 +19,20 @@ class CreateAlumnosTable extends Migration
             $table->biginteger('rut')->unique();
             $table->char('dv_rut');
 
-            $table->string('nombres');
-            $table->string('apellido_paterno');
-            $table->string('apellido_materno');
-            $table->date('fecha_nacimiento');
-            $table->char('sexo');
+            $table->string('nombres')->nullable();
+            $table->string('apellido_paterno')->nullable();
+            $table->string('apellido_materno')->nullable();
+            $table->date('fecha_nacimiento')->nullable();
+            $table->char('sexo')->nullable();
 
-            $table->string('region');
-            $table->string('comuna');
-            $table->string('direccion');
+            $table->string('region')->nullable();
+            $table->string('comuna')->nullable();
+            $table->string('direccion')->nullable();
             
 
-            $table->string('email',60)->unique();
-            $table->string('celular');
-            $table->string('telefono');
+            $table->string('email',60)->nullable();
+            $table->string('celular')->nullable();
+            $table->string('telefono')->nullable();
             
             $table->timestamps();
             $table->softDeletes();

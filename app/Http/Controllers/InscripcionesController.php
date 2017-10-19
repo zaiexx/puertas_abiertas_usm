@@ -16,6 +16,8 @@ class InscripcionesController extends Controller
      */
     public function index()
     {
+
+        return view('inscripciones.index');
     }
 
     /**
@@ -38,6 +40,7 @@ class InscripcionesController extends Controller
     {
      
         $input = $request->all();
+
         $rut = $input["rut"];
         $id_actividad = $input["id_actividad"];
 
@@ -45,14 +48,14 @@ class InscripcionesController extends Controller
         $id_alumno = $alumno->id_alumno;
 
 
-        $model = new \App\ActividadInscrito;
+        $model = new \App\ActividadEventoInscrito;
 
         $model->alumno_id = $id_alumno;
-        $model->actividad_id = $id_actividad;
+        $model->actividad_evento_id = $id_actividad;
 
         if($model->save()) {
             $redis = Redis::connection();
-            $redis->publish('message', $id_actividad . '-' . \App\Actividad::find($id_actividad)->cuposTotales());
+            $redis->publish('message', $id_actividad . '-' . \App\ActividadEvento::find($id_actividad)->cuposTotales());
         }
 
         return redirect()->route('inscripciones.show',array($rut))->with('message', 'Inscrito Exitosamente');
@@ -67,10 +70,23 @@ class InscripcionesController extends Controller
      */
     public function show($id)
     {
-     
-        $alumno = \App\Alumno::where("rut",$id)->get();
-        return view('inscripciones.index')->with('actividades', \App\Actividad::all())
-                                          ->with('alumno',$alumno);
+        
+
+        $alumno = \App\Alumno::where("rut",$id)->first();
+
+        if (count($alumno) != 0) {
+            $id_alumno = $alumno->id_alumno;
+
+            $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->first();
+            $id_evento = $eventoInscrito->evento_id;
+            $actividades = \App\ActividadEvento::where('evento_id',$id_evento)->get();
+            return view('inscripciones.show')->with('actividades', $actividades)
+                                             ->with('alumno',$alumno);
+        }else {
+
+            return redirect()->route('inscripciones.index')->withErrors('El alumno no se encuentra validado');          
+        }
+
     }
 
     /**
@@ -112,8 +128,15 @@ class InscripcionesController extends Controller
 
         $input = $request->all();
         $rut = $input["rut"];
-        return redirect()->route('inscripciones.show',array($rut))->with('message', 'hahahah');
 
+
+        $alumno = \App\Alumno::where("rut",$rut)->first();
+
+        if ($alumno != null) {
+            return redirect()->route('inscripciones.show',array($rut))->with('message', 'Alumno registrado correctamente, puede inscribir taller');
+        }else{
+            return redirect()->route('inscripciones.index')->withErrors('El alumno no se encuentra validado');          
+        }
     }
 
 

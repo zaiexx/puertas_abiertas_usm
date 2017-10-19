@@ -14,7 +14,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index')->with('actividades', Actividad::all());
+
+
+        $actividades = \App\ActividadEvento::all();
+
+        return view('dashboard.index')->with('actividades', $actividades);
     }
 
     /**
@@ -45,7 +49,16 @@ class DashboardController extends Controller
      */
     public function show($id)
     {
-        //
+        
+
+        $evento = \App\Evento::find($id);
+
+        $actividades = $evento->actividades;
+
+        return view('dashboard.index')->with('actividades', $actividades);
+
+
+
     }
 
     /**

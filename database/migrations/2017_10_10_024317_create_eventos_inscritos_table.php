@@ -17,9 +17,6 @@ class CreateEventosInscritosTable extends Migration
             $table->increments('id_evento_inscrito');
             $table->integer('evento_id')->unsigned();
             $table->integer('alumno_id')->unsigned();
-            $table->integer('horario_uno_id')->unsigned();
-            $table->integer('horario_dos_id')->unsigned();
-            $table->integer('horario_tres_id')->unsigned()->nullable();
             $table->boolean('delegacion');
             
 

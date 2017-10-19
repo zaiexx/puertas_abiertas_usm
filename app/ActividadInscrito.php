@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ActividadInscrito extends Model
 {
 
-use SoftDeletes;
+	use SoftDeletes;
 
 
 	protected $table = 'actividades_inscritos';

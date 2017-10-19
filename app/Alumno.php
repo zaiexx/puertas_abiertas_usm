@@ -20,7 +20,7 @@ class Alumno extends Model
 
 	public function actividades() {
 
-        return $this->belongsToMany('App\Actividad','actividades_inscritos')->withPivot('id_actividad_inscrito');
+        return $this->belongsToMany('App\ActividadEvento','actividades_eventos_inscritos')->withPivot('id_actividad_evento_inscrito');
 
     }
 

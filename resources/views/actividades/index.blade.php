@@ -60,26 +60,18 @@
                                         <tr>
                                             <th>Nombre Actividad</th>
                                             <th>Descripción</th>
-                                            <th>Hora Inicio</th>
-                                            <th>Hora Término</th>
-                                            <th>Cupos</th>
-                                            <th>Sobrecupos</th>
-                                        </tr>
+                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($actividades as $id_actividad => $actividad)
-                                            @if ($actividad[6] % 2 == 0)
+                                            @if ($actividad[2] % 2 == 0)
                                                 <tr class="even pointer">
                                             @else
                                                 <tr class="odd pointer">
                                             @endif
                                             <td><span class="label bg-purple">{{$actividad[0]}}</span></td>
                                             <td>{{$actividad[1]}}</td>
-                                            <td>{{$actividad[2]}}</td>
-                                            <td>{{$actividad[3]}}</td>
-                                            <td>{{$actividad[4]}}</td>
-                                            <td>{{$actividad[5]}}</td>
-                                            
+                                             
                                             <td>
                                                 <a href="{!! action('ActividadesController@show', [$id_actividad]) !!}"  title="Ver" class ="btn btn-primary btn-xs"><i class="material-icons">remove_red_eye</i></a>
                                                 <a href="{!! action('ActividadesController@edit', [$id_actividad]) !!}"  title="Editar" class ="btn btn-info btn-xs"><i class="material-icons">mode_edit</i></a>

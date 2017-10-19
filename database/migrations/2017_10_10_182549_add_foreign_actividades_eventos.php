@@ -23,6 +23,17 @@ class AddForeignActividadesEventos extends Migration
             $table->foreign('actividad_id')
                   ->references('id_actividad')
                   ->on('actividades');
+
+            $table->foreign('hora_inicio_id')
+                  ->references('id_horario')
+                  ->on('horarios');
+
+
+            $table->foreign('hora_termino_id')
+                  ->references('id_horario')
+                  ->on('horarios');
+
+
         });
     }
 
@@ -36,6 +47,10 @@ class AddForeignActividadesEventos extends Migration
         Schema::table('actividades_eventos', function (Blueprint $table) {
             $table->dropForeign('actividades_eventos_evento_id_foreign');
             $table->dropForeign('actividades_eventos_actividad_id_foreign');
+            $table->dropForeign('actividades_eventos_hora_inicio_id_foreign');
+            $table->dropForeign('actividades_eventos_hora_termino_id_foreign');
+    
+    
         });
     }
 }

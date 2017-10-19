@@ -91,11 +91,15 @@
                                 <a href="/actividades">Actividades</a>
                             </li>
                             <li>
-                                <a href="/sedes">Sedes</a>
+                                <a href="/eventos">Eventos</a>
                             </li>
                             <li>
                                 <a href="/horarios">Horarios</a>
                             </li>
+                            <li>
+                                <a href="/sedes">Sedes</a>
+                            </li>
+                       
                         </ul>
                     </li>
                     <li class="header">ETIQUETAS</li>
