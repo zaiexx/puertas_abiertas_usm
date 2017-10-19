@@ -1233,7 +1233,7 @@ class ActividadEventoTableSeeder extends Seeder{
             'actividad_id'           => 67,
             'evento_id'              => 3,
 
-            'cupos'                  => 84,
+            'cupos'                  => 115,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 1,
             'hora_termino_id'        => 3,
@@ -1261,7 +1261,7 @@ class ActividadEventoTableSeeder extends Seeder{
             'actividad_id'           => 68,
             'evento_id'              => 3,
 
-            'cupos'                  => 40,
+            'cupos'                  => 80,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 1,
             'hora_termino_id'        => 3,
@@ -1431,7 +1431,7 @@ class ActividadEventoTableSeeder extends Seeder{
             'actividad_id'           => 28,
             'evento_id'              => 3,
 
-            'cupos'                  => 15,
+            'cupos'                  => 20,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 5,
             'hora_termino_id'        => 7,
@@ -1459,7 +1459,7 @@ class ActividadEventoTableSeeder extends Seeder{
             'actividad_id'           => 79,
             'evento_id'              => 3,
 
-            'cupos'                  => 50,
+            'cupos'                  => 80,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 5,
             'hora_termino_id'        => 7,
@@ -1557,7 +1557,7 @@ class ActividadEventoTableSeeder extends Seeder{
             'actividad_id'           => 72,
             'evento_id'              => 3,
 
-            'cupos'                  => 20,
+            'cupos'                  => 15,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 5,
             'hora_termino_id'        => 7,
