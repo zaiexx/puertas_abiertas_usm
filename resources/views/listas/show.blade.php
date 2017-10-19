@@ -2,7 +2,7 @@
 
 @section('header')
     
-    @include('home.header')
+    @include('listas.header')
 
 @endsection
 
@@ -11,7 +11,7 @@
 
        <div class="container-fluid">
             <div class="block-header">
-                <h2>Panel de Administración | Consulta Talleres</h2>
+                <h2>Panel de Administración | Lista de Alumnos de la actividad {{$actividad->nombre_actividad }}</h2>
             </div>        
 
             <div class="row clearfix">
@@ -36,7 +36,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Todos los Talleres Registrados &nbsp; </h2>
+                            <h2>Todas los Alumnos &nbsp; <a href="{!! action('ListasController@index') !!}" title="Volver" class ="btn bg-purple btn-xs waves-effect"><i class="material-icons">keyboard_backspace</i>Volver</a></h2>
 
                             </h2>
                             <ul class="header-dropdown m-r--5">
@@ -45,32 +45,36 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
+                                        <li> <a href="{!! action('SedesController@create') !!}"> Agregar Alumno</a></li>
+                                        <li><a href="javascript:void(0);">Actividades Activos</a></li>
+                                        <li><a href="javascript:void(0);">Actividades Inactivos</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                         <div class="body">
-                        @if(count($actividades) > 0)
+                        @if(count($alumnos) > 0)
                             <div class="table-responsive">
                                 <table class="table table-hover dashboard-task-infos">
                                     <thead>
                                         <tr>
-                                            <th>Nombre Actividad</th>
-                                            <th>Horario Inicio</th>
-                                            <th>Horario Término</th>
-                                            
+                                            <th>Rut Alumno</th>
+                                            <th>Nombres</th>
+                                            <th>Apellido Paterno</th>
+                                            <th>Apellido Materno</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($actividades as $id_actividad => $actividad)
-                                            @if ($actividad[1] % 2 == 0)
+                                        @foreach ($alumnos as $id_alumno => $alumno)
+                                            @if ($alumno[4] % 2 == 0)
                                                 <tr class="even pointer">
                                             @else
                                                 <tr class="odd pointer">
                                             @endif
-                                            <td><span class="label bg-purple">{{$actividad[0]}}</span></td>
-                                            <td>{{$actividad[1]}}</td>
-                                            <td>{{$actividad[2]}}</td>
+                                            <td><span class="label bg-purple">{{$alumno[0]}}</span></td>
+                                            <td>{{$alumno[1]}}</td>
+                                            <td>{{$alumno[2]}}</td>
+                                            <td>{{$alumno[3]}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -78,7 +82,7 @@
                             </div>
 
                             @else
-                                <h3> No se han resgistrado talleres </h3>
+                                <h3> No se han registrado alumnos en este taller </h3>
                             @endif
                         </div>
                     </div>
@@ -91,7 +95,7 @@
 
 @section('js')
 
-    @include('home.js')
+    @include('listas.js')
 
 @endsection 
 

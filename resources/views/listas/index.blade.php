@@ -2,7 +2,7 @@
 
 @section('header')
     
-    @include('home.header')
+    @include('listas.header')
 
 @endsection
 
@@ -11,7 +11,7 @@
 
        <div class="container-fluid">
             <div class="block-header">
-                <h2>Panel de Administración | Consulta Talleres</h2>
+                <h2>Panel de Administración | Lista de Actividades</h2>
             </div>        
 
             <div class="row clearfix">
@@ -36,7 +36,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Todos los Talleres Registrados &nbsp; </h2>
+                            <h2>Todas las actividades &nbsp; </h2>
 
                             </h2>
                             <ul class="header-dropdown m-r--5">
@@ -45,6 +45,9 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
+                                        <li> <a href="{!! action('SedesController@create') !!}"> Agregar Alumno</a></li>
+                                        <li><a href="javascript:void(0);">Actividades Activos</a></li>
+                                        <li><a href="javascript:void(0);">Actividades Inactivos</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -56,14 +59,14 @@
                                     <thead>
                                         <tr>
                                             <th>Nombre Actividad</th>
-                                            <th>Horario Inicio</th>
-                                            <th>Horario Término</th>
-                                            
+                                            <th>Hora Inicio</th>
+                                            <th>hora Término</th>
+                                            <th>Ver </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($actividades as $id_actividad => $actividad)
-                                            @if ($actividad[1] % 2 == 0)
+                                            @if ($actividad[3] % 2 == 0)
                                                 <tr class="even pointer">
                                             @else
                                                 <tr class="odd pointer">
@@ -71,6 +74,10 @@
                                             <td><span class="label bg-purple">{{$actividad[0]}}</span></td>
                                             <td>{{$actividad[1]}}</td>
                                             <td>{{$actividad[2]}}</td>
+                                            <td>
+                                                <a href="{!! action('ListasController@show', [$id_actividad]) !!}"  title="Ver" class ="btn btn-primary btn-xs"><i class="material-icons">remove_red_eye</i></a>
+                                                
+                                            </td>                                                   
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -78,7 +85,7 @@
                             </div>
 
                             @else
-                                <h3> No se han resgistrado talleres </h3>
+                                <h3> No se han resgistrado actividades </h3>
                             @endif
                         </div>
                     </div>
@@ -91,7 +98,7 @@
 
 @section('js')
 
-    @include('home.js')
+    @include('actividades.js')
 
 @endsection 
 

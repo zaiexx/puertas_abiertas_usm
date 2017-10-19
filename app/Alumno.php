@@ -12,7 +12,7 @@ class Alumno extends Model
 	protected $primaryKey = 'id_alumno';
 	protected $table = 'alumnos';
  	protected $dates = ['deleted_at', 'created_at', 'updated_at','fecha_nacimiento'];	
- 	protected $fillable = ['rut','dv-rut','nombres','apellido_paterno','apellido_materno','sexo','fecha_nacimiento','region',
+ 	protected $fillable = ['rut','dv_rut','nombres','apellido_paterno','apellido_materno','sexo','fecha_nacimiento','region',
  						  'comuna','direccion','email','celular','telefono'];
  	protected $guarded = ['deleted_at'];
 

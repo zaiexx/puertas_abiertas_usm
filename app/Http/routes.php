@@ -33,6 +33,14 @@ Route::get('/home/{rut}',[
 	'as' => 'home.show', 'uses' => 'HomeController@show'
 	]);
 
+
+Route::get('/home/{rut}/asistencia/{id_taller}',
+	['as' => 'home.asistencia', 'uses' => 'HomeController@postAsistencia'
+	]);
+
+
+
+
 Route::resource('/sedes','SedesController');
 Route::resource('/eventos','EventosController');
 Route::resource('/actividades','ActividadesController');
@@ -62,6 +70,7 @@ Route::post('inscripciones/consultar',
 	]);
 
 
+
 Route::resource('horarios','HorariosController');
 Route::resource('carreras','CarrerasController');
 Route::resource('alumnos','AlumnosController');
@@ -71,3 +80,5 @@ Route::post('validacion/procesar',
 	]);
 
 Route::resource('validacion','AsistenciasController');
+
+Route::resource('listas','ListasController');

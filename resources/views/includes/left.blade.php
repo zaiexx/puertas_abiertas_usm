@@ -49,7 +49,14 @@
                     <li>
                         <a href="{{url('home')}}">
                             <i class="material-icons">add_box</i>
-                            <span>Registrar Asistencia Talleres</span>
+                            <span>Consultar Talleres Inscritos</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{url('listas')}}">
+                            <i class="material-icons">insert_drive_file</i>
+                            <span>Consultar Listado Inscritos</span>
                         </a>
                     </li>
 

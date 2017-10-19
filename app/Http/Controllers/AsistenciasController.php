@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Requests\ValidacionForm;
 
 
 class AsistenciasController extends Controller
@@ -45,7 +44,7 @@ class AsistenciasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ValidacionForm $request)
+    public function store(Request $request)
     {
         $input = $request->all();
         $rut = $input["rut"];

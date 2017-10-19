@@ -18,4 +18,12 @@ class ActividadEventoInscrito extends Model
 
 	protected $primaryKey = 'id_actividad_evento_inscrito';
 
+
+
+	public function actividades_eventos () {
+
+		return $this->belongsTo('App\ActividadEvento','actividad_evento_id');
+
+	}
+
 }
