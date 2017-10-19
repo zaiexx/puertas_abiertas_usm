@@ -73,6 +73,46 @@ class UserTableSeeder extends Seeder {
             'password'       	=> bcrypt('123456'),
             'rol_id'        	=> 1
         ]);
+    
+         User::create([
+            'id'                => 2,
+            'name'              => 'Daniela Salinas',
+            'email'             => 'daniela.salinas@usm.cl',
+            'password'          => bcrypt('123456'),
+            'rol_id'            => 1
+        ]);
+
+          User::create([
+            'id'                => 3,
+            'name'              => 'Muguette Lagos',
+            'email'             => 'muguette.lagos@usm.cl',
+            'password'          => bcrypt('123456'),
+            'rol_id'            => 1
+        ]);
+        
+        User::create([
+            'id'                => 4,
+            'name'              => 'Puertas Abiertas Uno',
+            'email'             => 'ppaa1@usm.cl',
+            'password'          => bcrypt('123456'),
+            'rol_id'            => 1
+        ]);
+
+        User::create([
+            'id'                => 5,
+            'name'              => 'Puertas Abiertas Dos',
+            'email'             => 'ppaa2@usm.cl',
+            'password'          => bcrypt('123456'),
+            'rol_id'            => 1
+        ]);
+
+        User::create([
+            'id'                => 6,
+            'name'              => 'Puertas Abiertas Dos',
+            'email'             => 'ppaa3@usm.cl',
+            'password'          => bcrypt('123456'),
+            'rol_id'            => 1
+        ]);
     }
 
 }
