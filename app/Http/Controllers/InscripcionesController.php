@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\InscripcionesForm;
 use Illuminate\Support\Facades\Redis;
 
 class InscripcionesController extends Controller
@@ -48,17 +49,23 @@ class InscripcionesController extends Controller
         $id_alumno = $alumno->id_alumno;
 
 
-        $model = new \App\ActividadEventoInscrito;
+        $model = \App\ActividadEventoInscrito::where('alumno_id',$id_alumno)->where('actividad_evento_id',$id_actividad)->get();
 
-        $model->alumno_id = $id_alumno;
-        $model->actividad_evento_id = $id_actividad;
+        if (count($model) == 0) {
+            $model = new \App\ActividadEventoInscrito;
 
-        if($model->save()) {
-            $redis = Redis::connection();
-            $redis->publish('message', $id_actividad . '-' . \App\ActividadEvento::find($id_actividad)->cuposTotales());
+            $model->alumno_id = $id_alumno;
+            $model->actividad_evento_id = $id_actividad;
+
+            if($model->save()) {
+                $redis = Redis::connection();
+                $redis->publish('message', $id_actividad . '-' . \App\ActividadEvento::find($id_actividad)->cuposTotales());
+            }
+            return redirect()->route('inscripciones.show',array($rut))->with('message', 'Inscrito Exitosamente');
+        }else{
+            return redirect()->route('inscripciones.show',array($rut))->withErrors(['Alumno Ya se Encuentra Inscrito']);
         }
 
-        return redirect()->route('inscripciones.show',array($rut))->with('message', 'Inscrito Exitosamente');
 
     }
 
@@ -80,6 +87,8 @@ class InscripcionesController extends Controller
             $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->first();
             $id_evento = $eventoInscrito->evento_id;
             $actividades = \App\ActividadEvento::where('evento_id',$id_evento)->get();
+
+
             return view('inscripciones.show')->with('actividades', $actividades)
                                              ->with('alumno',$alumno);
         }else {
@@ -124,7 +133,7 @@ class InscripcionesController extends Controller
     }
 
 
-    public function postProcesar (Request $request) {
+    public function postProcesar (InscripcionesForm $request) {
 
         $input = $request->all();
         $rut = $input["rut"];
@@ -142,6 +151,10 @@ class InscripcionesController extends Controller
 
     public function postDesinscribir (Request $request) {
 
+
+
+     
+
         $input = $request->all();
         $rut = $input["rut"];
 
@@ -149,20 +162,77 @@ class InscripcionesController extends Controller
         $id_alumno = $alumno->id_alumno;
         $id_actividad = $input["id_actividad"];
 
-        $inscripcion = \App\ActividadInscrito::where("alumno_id",$id_alumno)->where("actividad_id",$id_actividad);
-
+        $inscripcion = \App\ActividadEventoInscrito::where("alumno_id",$id_alumno)->where("actividad_evento_id",$id_actividad);
+       
         if($inscripcion->forceDelete()) {
             $redis = Redis::connection();
-            $redis->publish('message', $id_actividad . '-' . \App\Actividad::find($id_actividad)->cuposTotales());
-        }
+            $redis->publish('message', $id_actividad . '-' . \App\ActividadEvento::find($id_actividad)->cuposTotales());    
+            return redirect()->route('inscripciones.show',array($rut))->with('message', 'Alumno Desinscrito correctamente');
+        }else {
+            return redirect()->route('inscripciones.show',array($rut))->withErrors(['No se pudo desiscribir Alumno']);
+        }       
 
-
-        
-
-        return redirect()->route('inscripciones.show',array($rut))->with('message', 'hahahah');
 
     }
 
+
+
+    public function getBloques ($rut, $id_bloque) {
+
+
+        $alumno = \App\Alumno::where("rut",$rut)->first();
+
+        if (count($alumno) != 0) {
+            $id_alumno = $alumno->id_alumno;
+
+            $hi = 0;
+            $ht = 22;
+
+            if ($id_bloque == 1) {
+                $hi = 0;
+                $ht = 4;
+
+            }else if ($id_bloque == 2) {
+                $hi = 4;
+                $ht = 8;
+            }else {
+                $hi = 8;
+                $ht = 14;
+            }
+
+            $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->first();
+            $id_evento = $eventoInscrito->evento_id;
+
+            $actividades = \App\ActividadEvento::where('evento_id',$id_evento)->where('hora_inicio_id','>=',$hi)->where('hora_termino_id','<=',$ht)->get();
+
+
+            return view('inscripciones.show')->with('actividades', $actividades)
+                                             ->with('alumno',$alumno);
+        }else {
+
+            return redirect()->route('inscripciones.index')->withErrors('El alumno no se encuentra validado');          
+        }
+
+    }
+
+
+    public function postConsultar (InscripcionesForm $request) {
+
+        $input = $request->all();
+
+        $alumno = \App\Alumno::where('rut',$input['rut'])->first();
+
+        if ($alumno != null) {
+            $id_alumno = $alumno->id_alumno;
+            $actividadesEventosInscritos = \App\ActividadEventoInscrito::where('alumno_id',$id_alumno)->get();
+            return redirect()->route('home.show',array($alumno->rut))->with('message','El alumno se encuentra registrado en las siguientes actividades')
+                                                 ->with('actividades',$actividadesEventosInscritos);                     
+
+        }else {
+            return redirect()->route('home.index')->withErrors('El alumno no se encuentra validado');                     
+        }
+
+    }
 
 
 }

@@ -29,5 +29,10 @@ class Actividad extends Model
 
     }
 
+    public function carreras () {
+    	return $this->belongsTo('App\Carrera','carrera_id');
+
+    }
+
     
 }

@@ -409,6 +409,18 @@ class CarreraTableSeeder extends Seeder {
             'sede_id'             => 1
         ]);
 
+        Carrera::create([
+            'id_carrera'          => 21,
+            'nombre_carrera'      => 'Piloto Comercial',
+            'sede_id'             => 2
+        ]);
+
+
+        Carrera::create([
+            'id_carrera'          => 22,
+            'nombre_carrera'      => 'Emprendimiento e Innovación',
+            'sede_id'             => 2
+        ]);
 
     }
 
@@ -977,7 +989,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Marketing Digital' ,
             'descripcion'            => 'Taller de Marketing Digital',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 12            
         ]);
 
 
@@ -986,7 +998,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Vuelo Estacionario' ,
             'descripcion'            => 'Taller de Vuelo Estacionario',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 21            
         ]);
 
 
@@ -995,7 +1007,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Juego de Emprendimiento' ,
             'descripcion'            => 'Juego de Emprendimiento',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 12            
         ]);
 
 
@@ -1004,7 +1016,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Electrónica Aeronáutica' ,
             'descripcion'            => 'Taller de Electrónica Aeronáutica',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 13            
         ]);
 
 
@@ -1013,7 +1025,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Ruta de Física' ,
             'descripcion'            => 'Ruta de Física',
             'tipo_actividad'         => 'Ruta',
-            'carrera_id'             => 14            
+            'carrera_id'             => 15            
         ]);
 
 
@@ -1022,7 +1034,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Zona de Emprendedores' ,
             'descripcion'            => 'Zona de Emprendedores',
             'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 14            
+            'carrera_id'             => 22            
         ]);
 
 
@@ -1031,7 +1043,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Satélites de Observación' ,
             'descripcion'            => 'Satélites de Observación',
             'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 14            
+            'carrera_id'             => 11            
         ]);
 
 
@@ -1040,7 +1052,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Cuestión de Talentos' ,
             'descripcion'            => 'Cuestión de Talentos',
             'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 14            
+            'carrera_id'             => 12            
         ]);
 
 
@@ -1049,7 +1061,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Simulación de Procesos Productivos' ,
             'descripcion'            => 'Simulación de Procesos Productivos',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 10            
         ]);
         
 
@@ -1058,7 +1070,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Autos Solares',
             'descripcion'            => 'Autos Solares',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 10            
         ]);
         
         Actividad::create([
@@ -1066,7 +1078,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Juego de la Bolsa',
             'descripcion'            => 'Juego de la Bolsa',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 10            
         ]);
 
 
@@ -1084,7 +1096,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Aerolíneas Low cost',
             'descripcion'            => 'Aerolíneas Low cost',
             'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 14            
+            'carrera_id'             => 11            
         ]);
 
         Actividad::create([
@@ -1092,7 +1104,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Planifica tu Vuelo',
             'descripcion'            => 'Planifica tu Vuelo',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 21            
         ]);
        
         Actividad::create([
@@ -1100,7 +1112,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Innovación y Emprendimiento en la Red',
             'descripcion'            => 'Innovación y Emprendimiento en la Red',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 10            
         ]);
        
         Actividad::create([
@@ -1108,7 +1120,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Taller de Producción',
             'descripcion'            => 'Taller de Producción',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 10            
         ]);
        
         Actividad::create([
@@ -1116,7 +1128,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Formación de Piloto',
             'descripcion'            => 'Formación de Piloto',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 21            
         ]);
        
         Actividad::create([
@@ -1124,7 +1136,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Aeronáutica y Espacio' ,
             'descripcion'            => 'Aeronáutica y Espacio',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 11            
         ]);
 
         Actividad::create([
@@ -1132,7 +1144,7 @@ class ActividadTableSeeder extends Seeder {
             'nombre_actividad'       => 'Taller de Emprendimiento' ,
             'descripcion'            => 'Taller de Emprendimiento',
             'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'carrera_id'             => 22            
         ]);
 
 
@@ -3489,6 +3501,18 @@ class ActividadEventoTableSeeder extends Seeder{
         ]);
                                      
 
+        ActividadEvento::create([
+
+            'id_actividad_evento'    => 169,
+            'actividad_id'           => 71,
+            'evento_id'              => 3,
+
+            'cupos'                  => 60,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 4,
+            'hora_termino_id'        => 8,
+
+        ]);
 
         
 

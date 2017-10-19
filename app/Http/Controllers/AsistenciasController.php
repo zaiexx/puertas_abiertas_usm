@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\ValidacionForm;
+
 
 class AsistenciasController extends Controller
 {
@@ -43,7 +45,7 @@ class AsistenciasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidacionForm $request)
     {
         $input = $request->all();
         $rut = $input["rut"];
@@ -52,11 +54,16 @@ class AsistenciasController extends Controller
 
         if ($alumno != null) {
 
-            $inscripcion = new \App\EventoInscrito;
-            $inscripcion->alumno_id = $alumno->id_alumno;
-            $inscripcion->evento_id = $id_evento;
-            $inscripcion->save();
+            $inscripcion = \App\EventoInscrito::where('evento_id',$id_evento)->where('alumno_id',$alumno->id_alumno)->get();
 
+            if (count($inscripcion) == 0) {
+
+                $inscripcion = new \App\EventoInscrito;
+                $inscripcion->alumno_id = $alumno->id_alumno;
+                $inscripcion->evento_id = $id_evento;
+                $inscripcion->save();
+            }
+            
             return redirect()->route('validacion.show',array($id_evento))->with('message', 'Alumno Validado Correctamente');
 
         }else {
@@ -74,7 +81,7 @@ class AsistenciasController extends Controller
             $inscripcion->evento_id = $id_evento;
             $inscripcion->save();
 
-            return redirect()->route('validacion.show',array($id_evento))->withErrors(['Alumno Debe Llenar Ficha']);
+            return redirect()->route('validacion.show',array($id_evento))->withErrors(['Recordar que el Alumno Debe Llenar Ficha']);
 
         }
 

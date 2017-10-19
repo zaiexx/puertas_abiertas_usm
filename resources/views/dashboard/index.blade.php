@@ -1,96 +1,89 @@
 @extends('layouts.app')
 
 @section('header')
-
+    
     @include('dashboard.header')
 
 @endsection
 
-
 @section('content')
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+        <div class="container-fluid">
+        
+            <div class="block-header">
+                <h2>Panel de Administración | Visualización</h2>
+            </div>        
 
-    <div class="container-fluid">
-        <div class="block-header">
-            <h2>Panel de Administración | Cursos</h2>
-        </div>
+            <div class="row clearfix">
 
-        <div class="row clearfix">
-
-            @if($errors->has())
-                <div class='alert alert-danger'>
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    @foreach ($errors->all('<p>:message</p>') as $message)
-                        {!! $message !!}
-                    @endforeach
-                </div>
-            @endif
-
-            @if (Session::has('message'))
-                <div class="alert alert-success">
-                    <a href="#" class="close" data-dismiss="alert">&times;</a>
-                    {{ Session::get('message') }}
-                </div>
-            @endif
-
-        <!-- Task Info -->
-
-            @if(count($actividades))
-
-                @foreach ($actividades as $index => $actividad)
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 curso">
-                        <div class="card">
-                            @if($actividad->cuposTotales() <= 0)
-                                <div class="body bg-grey">
-                                    @else
-                                        <div class="body bg-red">
-                                            @endif
-
-                                            {{$actividad->actividades->nombre_actividad}}
-                                            <span class="badge"
-                                                  act-id="{{$actividad->id_actividad_evento}}">{{$actividad->cuposTotales()}}</span>
-                                        </div>
-                                </div>
-                        </div>
-
+               @if($errors->has())
+                    <div class='alert alert-danger'>
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        @foreach ($errors->all('<p>:message</p>') as $message)
+                            {!! $message !!}
                         @endforeach
-
-                        @else
-                            <h3> No se han resgistrado Actividades </h3>
-                        @endif
-
                     </div>
-        </div>
+                @endif
+ 
+                @if (Session::has('message'))
+                    <div class="alert alert-success">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        {{ Session::get('message') }}
+                    </div>
+                @endif
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <div id="messages"></div>
+                <!-- Task Info -->
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Visualización de Inscripciones &nbsp;</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+
+                            <div class="demo-masked-input">
+
+                            {!! Form::open(['route' => 'dashboard.procesar']) !!}
+
+                                <label><span class="required">* </span>Ingrese El Bloque Horario a Visualizar</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+
+                                      {!! Form::select('id_bloque', $bloques, null,
+                                          ['class' => 'form-control']) 
+                                      !!} 
+
+                                      @if ($errors->has('tipo'))
+                                          <span class="help-block">
+                                              <strong>{{ $errors->first('tipo') }}</strong>
+                                          </span>
+                                      @endif
+
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
+                                    {!! link_to(URL::previous(), 'Volver', ['class' => 'btn btn-danger m-t-15 waves-effect']) !!}
+                                </div>           
+                    
+                            {!! Form::close() !!}
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <script>
-            var socket = io.connect('http://localhost:8890');
-            socket.on('message', function (data) {
-                var $badge = $('[act-id="' + data[0] + '"]');
-                $badge.html(data[1]);
 
-                console.log($badge);
-
-                if (data[1] <= 0) {
-                    $badge.closest('.body')
-                        .removeClass('bg-red')
-                        .addClass('bg-grey');
-                } else {
-                    $badge.closest('.body')
-                        .addClass('bg-red')
-                        .removeClass('bg-grey');
-                }
-            });
-        </script>
 
 @endsection
 
@@ -99,7 +92,4 @@
 
     @include('dashboard.js')
 
-@endsection
- 
- 
- 
+@endsection 

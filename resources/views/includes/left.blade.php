@@ -26,61 +26,34 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">Navegación Principal</li>
-                    <li class="active">
+                  
+                     <li class="active">
+
+                        <a href="{{url('validacion')}}" class="menu-toggle">
+                            <i class="material-icons">check_circle</i>
+                            <span>Validación a Puertas Abiertas</span>
+                        </a>
+                 
+                    </li>
+
+
+                     <li>
+
+                        <a href="{{url('inscripciones')}}" class="menu-toggle">
+                            <i class="material-icons">create</i>
+                            <span>Inscripciones a Talleres y Rutas</span>
+                        </a>
+                        
+                    </li>
+                    
+                    <li>
                         <a href="{{url('home')}}">
-                            <i class="material-icons">home</i>
-                            <span>Inicio</span>
+                            <i class="material-icons">add_box</i>
+                            <span>Registrar Asistencia Talleres</span>
                         </a>
                     </li>
-                     <li>
-
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">face</i>
-                            <span>Alumnos</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{url('alumnos')}}">Ver Alumnos</a>
-                            </li>
-                            <li>
-                                <a href="{{url('alumnos/create')}}">Agregar Alumnos</a>
-                            </li>
-                        </ul>
-                    </li>
 
 
-                     <li>
-
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">face</i>
-                            <span>Inscripciones a Puertas Abiertas</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{url('inscripciones')}}">Ver Inscritos</a>
-                            </li>
-                            <li>
-                                <a href="{{url('inscripciones/create')}}">Inscribir Alumno</a>
-                            </li>
-                        </ul>
-                    </li>
-
-
-                     <li>
-
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">face</i>
-                            <span>Inscripciones a Actividades</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{url('actividades')}}">Ver Inscritos</a>
-                            </li>
-                            <li>
-                                <a href="{{url('inscripciones/create')}}">Inscribir Alumno</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">settings</i>
@@ -99,26 +72,30 @@
                             <li>
                                 <a href="/sedes">Sedes</a>
                             </li>
-                       
+                            <li>
+                                <a href="/alumnos">Alumnos</a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="header">ETIQUETAS</li>
+
+           
+                    <li class="header">DASHBOARD</li>
                     <li>
-                        <a href="javascript:void(0);">
+                        <a href="/dashboard/1">
                             <i class="material-icons col-red">donut_large</i>
-                            <span></span>
+                            <span>Primer Bloque</span>
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0);">
+                        <a href="/dashboard/2">
                             <i class="material-icons col-amber">donut_large</i>
-                            <span></span>
+                            <span>Segundo Bloque</span>
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0);">
+                        <a href="/dashboard/3">
                             <i class="material-icons col-light-blue">donut_large</i>
-                            <span></span>
+                            <span>Tercer Bloque</span>
                         </a>
                     </li>
                 </ul>
@@ -127,10 +104,10 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 <a href="javascript:void(0);">Nutrixpert</a> AdminBSB-Material Design
+                    &copy; 2016 <a href="javascript:void(0);">Puertas Abiertas UTFSM 2017
                 </div>
                 <div class="version">
-                    <b>Version: </b> 0.X
+                    <b>Version: </b> 1.0
                 </div>
             </div>
             <!-- #Footer -->

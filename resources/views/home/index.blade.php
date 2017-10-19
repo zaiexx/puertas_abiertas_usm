@@ -11,7 +11,7 @@
         <div class="container-fluid">
         
             <div class="block-header">
-                <h2>Panel de Administración | Inscripción</h2>
+                <h2>Panel de Administración | Consulta Registro Talleres</h2>
             </div>        
 
             <div class="row clearfix">
@@ -36,7 +36,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Sistema de Inscripción de Talleres y Rutas &nbsp;</h2>
+                            <h2>Sistema de Consulta de Inscripciones &nbsp;</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -49,27 +49,18 @@
 
                             <div class="demo-masked-input">
 
-                            {!! Form::open(['route' => 'inscripciones.procesar']) !!}
+                            {!! Form::open(['route' => 'inscripciones.consultar']) !!}
 
-                                <label><span class="required">*</span>Rut</label>
+                                <label><span class="required">* </span>Rut</label>
                                 <div class="form-group">
                                     <div class="form-line">
                                         {!! Form::text('rut', null, ['class'=>'form-control', 'placeholder' => "Ingresa el rut del alumno"])!!}
                                     </div>
                                 </div>
 
-              
-
-							    <label><span class="required">*</span>DV</label>
-	                                <div class="form-group">
-	                                    <div class="form-line">
-	                                        {!! Form::text('dv_rut', null, ['class'=>'form-control', 'placeholder' => "Ingresa el digito"])!!}
-	                                    </div>
-	                            </div>
-
 
 	                            <div class="form-group">
-                                    {!! Form::submit('Enviar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
+                                    {!! Form::submit('Consultar', ["class" => "btn btn-primary m-t-15 waves-effect"]) !!}
                                     {!! link_to(URL::previous(), 'Volver', ['class' => 'btn btn-danger m-t-15 waves-effect']) !!}
                                 </div>           
                     
