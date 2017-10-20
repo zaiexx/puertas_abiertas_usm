@@ -82,9 +82,10 @@ class InscripcionesController extends Controller
         $alumno = \App\Alumno::where("rut",$id)->first();
 
         if (count($alumno) != 0) {
+
             $id_alumno = $alumno->id_alumno;
 
-            $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->first();
+            $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->orderBy('created_at','desc')->first();
             $id_evento = $eventoInscrito->evento_id;
             $actividades = \App\ActividadEvento::where('evento_id',$id_evento)->get();
 
@@ -138,7 +139,6 @@ class InscripcionesController extends Controller
         $input = $request->all();
         $rut = $input["rut"];
 
-
         $alumno = \App\Alumno::where("rut",$rut)->first();
 
         if ($alumno != null) {
@@ -190,13 +190,13 @@ class InscripcionesController extends Controller
 
             if ($id_bloque == 1) {
                 $hi = 0;
-                $ht = 4;
+                $ht = 8;
 
             }else if ($id_bloque == 2) {
-                $hi = 4;
-                $ht = 8;
+                $hi = 5;
+                $ht = 13;
             }else {
-                $hi = 8;
+                $hi = 9;
                 $ht = 14;
             }
 
