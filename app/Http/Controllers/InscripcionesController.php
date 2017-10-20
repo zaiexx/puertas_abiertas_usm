@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Redis;
 
 class InscripcionesController extends Controller
 {
+    
+
+    public function __construct() {
+
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -197,34 +205,32 @@ class InscripcionesController extends Controller
             $ht = 22;
 
             if ($id_bloque == 1) {
-                $hi = 0;
-                $ht = 3;
-
+                $hi = 1;
+                $ht = 2;
             }else if ($id_bloque == 2) {
                 $hi = 3;
-                $ht = 5;
+                $ht = 4;
             }else if ($id_bloque == 3) {
                 $hi = 5;
-                $ht = 7;
+                $ht = 6;
             }else if ($id_bloque == 4) {
                 $hi = 7;
-                $ht = 9;
+                $ht = 8;
             
             }else if ($id_bloque == 5) {
                 $hi = 9;
-                $ht = 11;
-            
+                $ht = 10;
             }else {
                 $hi = 11;
-                $ht = 13;
+                $hf = 12;
             }
 
             $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->orderBy('created_at','desc')->first();
             $id_evento = $eventoInscrito->evento_id;
-
-            $actividades = \App\ActividadEvento::where('evento_id',$id_evento)->where('hora_inicio_id','>=',$hi)->where('hora_termino_id','<=',$ht)->get();
-
-
+            $actividades = \App\ActividadEvento::where('evento_id',$id_evento)->where(function ($query) use ($hi, $ht) {
+                    $query->where('hora_inicio_id',$hi)->orWhere('hora_inicio_id',$ht);
+                })->get();
+                    
             return view('inscripciones.show')->with('actividades', $actividades)
                                              ->with('alumno',$alumno);
         }else {
