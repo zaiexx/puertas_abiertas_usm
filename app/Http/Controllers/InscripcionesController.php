@@ -200,7 +200,7 @@ class InscripcionesController extends Controller
                 $ht = 14;
             }
 
-            $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->first();
+            $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->orderBy('created_at','desc')->first();
             $id_evento = $eventoInscrito->evento_id;
 
             $actividades = \App\ActividadEvento::where('evento_id',$id_evento)->where('hora_inicio_id','>=',$hi)->where('hora_termino_id','<=',$ht)->get();
