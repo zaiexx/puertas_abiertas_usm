@@ -80,7 +80,7 @@ class DashboardController extends Controller
             $ht = 22;
         }
 
-        $actividades = \App\ActividadEvento::where('evento_id',1)->where('hora_inicio_id','>=',$hi)->where('hora_termino_id','<=',$ht)->get();
+        $actividades = \App\ActividadEvento::where('evento_id',2)->where('hora_inicio_id','>=',$hi)->where('hora_termino_id','<=',$ht)->get();
  
         return view('dashboard.show')->with('actividades', $actividades);
 
