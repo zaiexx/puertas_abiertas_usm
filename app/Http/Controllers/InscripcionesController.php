@@ -222,7 +222,7 @@ class InscripcionesController extends Controller
                 $ht = 10;
             }else {
                 $hi = 11;
-                $hf = 12;
+                $ht = 12;
             }
 
             $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->orderBy('created_at','desc')->first();
