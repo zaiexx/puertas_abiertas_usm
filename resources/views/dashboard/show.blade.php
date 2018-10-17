@@ -51,9 +51,9 @@
 
 
                                 @if ($actividad->actividades->carreras->id_carrera == 12 or $actividad->actividades->carreras->id_carrera == 5) 
-                                    <div class="body bg-orange col-pink">
+                                    <div class="body bg-cyan col-pink">
                                     <?php $col = "col-black"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 21  or $actividad->actividades->carreras->id_carrera == 3) 
+                                @elseif ($actividad->actividades->carreras->id_carrera == 23  or $actividad->actividades->carreras->id_carrera == 3) 
                                     <div class="body bg-indigo">
                                     <?php $col = "col-white"; ?>
                                 @elseif ($actividad->actividades->carreras->id_carrera == 10 or $actividad->actividades->carreras->id_carrera == 7) 
@@ -80,11 +80,10 @@
                                     <div class="body bg-red">
                                     <?php $col = "col-light-white"; ?> 
                                                                    
-                                @elseif ($actividad->actividades->carreras->id_carrera == 4) 
+                                @elseif ($actividad->actividades->carreras->id_carrera == 23) 
                                     <div class="body bg-deep-purple">
                                     <?php $col = "col-light-white"; ?> 
-                                                                   
-
+                                    
                                 @elseif ($actividad->actividades->carreras->id_carrera == 6) 
                                     <div class="body bg-deep-orange">
                                     <?php $col = "col-light-white"; ?> 
