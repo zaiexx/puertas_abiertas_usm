@@ -168,7 +168,7 @@
         </div>
 
         <script>
-            var socket = io.connect('http://localhost:8890');
+            var socket = io.connect('http://206.189.198.29:8890');
             socket.on('message', function (data) {
 
                 var $badge = $('[act-id="' + data[0] + '"]');

@@ -47,13 +47,11 @@
                                 <?php $col = "col-white"; ?>
 
                             @else
-                            
-
 
                                 @if ($actividad->actividades->carreras->id_carrera == 12 or $actividad->actividades->carreras->id_carrera == 5) 
                                     <div class="body bg-cyan col-pink">
                                     <?php $col = "col-black"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 23  or $actividad->actividades->carreras->id_carrera == 3) 
+                                @elseif ($actividad->actividades->carreras->id_carrera == 3) 
                                     <div class="body bg-indigo">
                                     <?php $col = "col-white"; ?>
                                 @elseif ($actividad->actividades->carreras->id_carrera == 10 or $actividad->actividades->carreras->id_carrera == 7) 
@@ -80,7 +78,8 @@
                                     <div class="body bg-red">
                                     <?php $col = "col-light-white"; ?> 
                                                                    
-                                @elseif ($actividad->actividades->carreras->id_carrera == 23) 
+                                @elseif ($actividad->actividades->carreras->id_carrera == 23 or
+                                $actividad->actividades->carreras->id_carrera == 24) 
                                     <div class="body bg-deep-purple">
                                     <?php $col = "col-light-white"; ?> 
                                     
@@ -127,7 +126,7 @@
         </div>
 
         <script>
-            var socket = io.connect('http://localhost:8890');
+            var socket = io.connect('http://206.189.198.29:8890');
             socket.on('message', function (data) {
                 var $badge = $('[act-id="' + data[0] + '"]');
                 $badge.html(data[1]);
