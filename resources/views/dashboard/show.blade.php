@@ -48,10 +48,12 @@
 
                             @else
 
+
+
                                 @if ($actividad->actividades->carreras->id_carrera == 12 or $actividad->actividades->carreras->id_carrera == 5) 
                                     <div class="body bg-cyan col-pink">
-                                    <?php $col = "col-black"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 3) 
+                                    <?php $col = "col-white"; ?>
+                                @elseif ($actividad->actividades->carreras->id_carrera == 21  or $actividad->actividades->carreras->id_carrera == 3) 
                                     <div class="body bg-indigo">
                                     <?php $col = "col-white"; ?>
                                 @elseif ($actividad->actividades->carreras->id_carrera == 10 or $actividad->actividades->carreras->id_carrera == 7) 
@@ -66,9 +68,9 @@
                                 @elseif ($actividad->actividades->carreras->id_carrera == 15) 
                                     <div class="body bg-white">
                                     <?php $col = "col-light-blue"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 22 or $actividad->actividades->carreras->id_carrera == 14) 
-                                    <div class="body bg-blue-grey">
-                                    <?php $col = "col-light-white"; ?>                                
+                                @elseif ($actividad->actividades->carreras->id_carrera == 25 or $actividad->actividades->carreras->id_carrera == 14) 
+                                    <div class="body bg-usm">
+                                    <?php $col = "col-white"; ?>                                
 
                                 @elseif ($actividad->actividades->carreras->id_carrera == 9) 
                                     <div class="body bg-pink">
@@ -78,11 +80,12 @@
                                     <div class="body bg-red">
                                     <?php $col = "col-light-white"; ?> 
                                                                    
-                                @elseif ($actividad->actividades->carreras->id_carrera == 23 or
-                                $actividad->actividades->carreras->id_carrera == 24) 
+                                @elseif ($actividad->actividades->carreras->id_carrera == 24 or
+                                $actividad->actividades->carreras->id_carrera == 23) 
                                     <div class="body bg-deep-purple">
                                     <?php $col = "col-light-white"; ?> 
-                                    
+                                                                   
+
                                 @elseif ($actividad->actividades->carreras->id_carrera == 6) 
                                     <div class="body bg-deep-orange">
                                     <?php $col = "col-light-white"; ?> 
@@ -93,12 +96,14 @@
                                 @endif
 
                             @endif
-                                    <h4 class = "{{$col}}">{{$actividad->actividades->nombre_actividad}}</h4>
-                                    <span class ="{{$col}}">Cantidad de Cupos: <span class="badge" act-id="{{$actividad->id_actividad_evento}}">{{$actividad->cuposTotales()}}</span><br/>
+                                     <h4 class = "{{$col}}">{{$actividad->actividades->nombre_actividad}}</h4>
+                                    <span class ="{{$col}}"><b>Cupos Disponibles:</b> <span class="badge" act-id="{{$actividad->id_actividad_evento}}">{{$actividad->cuposTotales()}}</span><br/>
+                                    <b>Horario:</b>
                                     {{ $actividad->horario_inicio->horario}} - {{ $actividad->horario_termino->horario }}
                                     </span>
 
-                                    @if ($actividad->actividades->id_actividad != 80 and $actividad->actividades->id_actividad != 24 and $actividad->actividades->id_actividad != 74) 
+
+                                    @if ($actividad->actividades->id_actividad != 80 and $actividad->actividades->id_actividad != 74) 
                                         <br/>&nbsp;
                                     @endif
                                                          

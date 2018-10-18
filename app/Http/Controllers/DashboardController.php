@@ -131,24 +131,27 @@ class DashboardController extends Controller
 
         $hi = 0;
         $ht = 22;
+        $id_bloque = $id_bloque+1;
+        
 
         if ($id_bloque == 1) {
-            $hi = 0;
+            $hi = 1;
             $ht = 4;
 
         }else if ($id_bloque == 2) {
             $hi = 4;
             $ht = 8;
         }else if ($id_bloque == 3) {
-            $hi = 8;
+            $hi = 9;
             $ht = 14;
         }else {
-
             $hi = 0;
             $ht = 22;
         }
 
-        $actividades = \App\ActividadEvento::where('evento_id',3)->where('hora_inicio_id','>=',$hi)->where('hora_termino_id','<=',$ht)->get();
+        $actividades = \App\ActividadEvento::where('evento_id',3)->where(function ($query) use ($hi, $ht) {
+                    $query->where('hora_inicio_id',">=",$hi)->where('hora_inicio_id',"<=",$ht);
+                })->get();
         if ($actividades != null) {
             return redirect()->route('dashboard.show',array($id_bloque))->with('actividades', $actividades);
         }else {
