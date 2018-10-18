@@ -13,11 +13,11 @@
 
     <div class="container-fluid">
         <div class="block-header">
-            <h2>Panel de Administración | Inscripcion de Talleres y Rutas de alumno Rut: <b>{{ $alumno->rut }}</b>
+            <h2>Inscripcion de Talleres y Rutas | Inscribiendo Alumno Rut: <b>{{ $alumno->rut }}</b></br></br>
             <div>
-            <a href="{!! action('InscripcionesController@getBloques',[$alumno->rut,1]) !!}" title="Primer Bloque" class ="btn bg-red btn-xs waves-effect"><i class="material-icons">remove_red_eye</i>Ver Talleres Primer Bloque</a>&nbsp;
-            <a href="{!! action('InscripcionesController@getBloques',[$alumno->rut,2]) !!}" title="Segundo Bloque" class ="btn bg-yellow btn-xs waves-effect col-black"><i class="material-icons">remove_red_eye</i>Ver Talleres Segundo Bloque</i></a>&nbsp;
-            <a href="{!! action('InscripcionesController@getBloques',[$alumno->rut,3]) !!}" title="Tercer Bloque" class ="btn bg-light-blue btn-xs waves-effect"><i class="material-icons">remove_red_eye</i>Ver Talleres Tercer Bloque</i></a>&nbsp;
+            <a href="{!! action('InscripcionesController@getBloques',[$alumno->rut,1]) !!}" title="Primer Bloque" class ="btn bg-usm btn-xs waves-effect"><b>Ver Talleres Primer Bloque</a></b>&nbsp;
+            <a href="{!! action('InscripcionesController@getBloques',[$alumno->rut,2]) !!}" title="Segundo Bloque" class ="btn bg-usm btn-xs waves-effect"><b>Ver Talleres Segundo Bloque</a></b>&nbsp;
+            <a href="{!! action('InscripcionesController@getBloques',[$alumno->rut,3]) !!}" title="Tercer Bloque" class ="btn bg-usm btn-xs waves-effect"><b> Ver Talleres Tercer Bloque</a></b>&nbsp;
             </div>
         </h2>
         </div>
@@ -56,8 +56,8 @@
 
 
                                 @if ($actividad->actividades->carreras->id_carrera == 12 or $actividad->actividades->carreras->id_carrera == 5) 
-                                    <div class="body bg-orange col-pink">
-                                    <?php $col = "col-black"; ?>
+                                    <div class="body bg-cyan col-pink">
+                                    <?php $col = "col-white"; ?>
                                 @elseif ($actividad->actividades->carreras->id_carrera == 21  or $actividad->actividades->carreras->id_carrera == 3) 
                                     <div class="body bg-indigo">
                                     <?php $col = "col-white"; ?>
@@ -73,9 +73,9 @@
                                 @elseif ($actividad->actividades->carreras->id_carrera == 15) 
                                     <div class="body bg-white">
                                     <?php $col = "col-light-blue"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 22 or $actividad->actividades->carreras->id_carrera == 14) 
-                                    <div class="body bg-blue-grey">
-                                    <?php $col = "col-light-white"; ?>                                
+                                @elseif ($actividad->actividades->carreras->id_carrera == 25 or $actividad->actividades->carreras->id_carrera == 14) 
+                                    <div class="body bg-usm">
+                                    <?php $col = "col-white"; ?>                                
 
                                 @elseif ($actividad->actividades->carreras->id_carrera == 9) 
                                     <div class="body bg-pink">
@@ -85,7 +85,8 @@
                                     <div class="body bg-red">
                                     <?php $col = "col-light-white"; ?> 
                                                                    
-                                @elseif ($actividad->actividades->carreras->id_carrera == 4) 
+                                @elseif ($actividad->actividades->carreras->id_carrera == 24 or
+                                $actividad->actividades->carreras->id_carrera == 23) 
                                     <div class="body bg-deep-purple">
                                     <?php $col = "col-light-white"; ?> 
                                                                    
@@ -101,14 +102,14 @@
 
                             @endif
                                     <h4 class = "{{$col}}">{{$actividad->actividades->nombre_actividad}}</h4>
-                                    <span class ="{{$col}}">Cantidad de Cupos: <span class="badge" act-id="{{$actividad->id_actividad_evento}}">{{$actividad->cuposTotales()}}</span><br/>
+                                    <span class ="{{$col}}"><b>Cupos Disponibles:</b> <span class="badge" act-id="{{$actividad->id_actividad_evento}}">{{$actividad->cuposTotales()}}</span><br/>
+                                    <b>Horario:</b>
                                     {{ $actividad->horario_inicio->horario}} - {{ $actividad->horario_termino->horario }}
                                     </span>
 
-                                    @if ($actividad->actividades->id_actividad != 80 && $actividad->actividades->id_actividad != 24 && $actividad->actividades->id_actividad != 74) 
+                                    @if ($actividad->actividades->id_actividad != 80 && $actividad->actividades->id_actividad != 74) 
                                         <br/>
                                     @endif
-
                                     <?php $flag = false; ?>
                                     <?php $flag2 = true; ?>
 
@@ -169,7 +170,10 @@
 
         <script>
             var socket = io.connect('http://206.189.198.29:8890');
+            //var socket = io.connect('http://localhost:8890');
+            
             socket.on('message', function (data) {
+
 
                 var $badge = $('[act-id="' + data[0] + '"]');
                 $badge.html(data[1]);

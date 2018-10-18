@@ -25,7 +25,7 @@ class ListasController extends Controller
         
         $actividades_eventos = \App\ActividadEvento::where('evento_id',3)->get();
         $arr_actividades = array();
-     
+        
         $i = 0;
 
         foreach ($actividades_eventos as $actividad_evento) {

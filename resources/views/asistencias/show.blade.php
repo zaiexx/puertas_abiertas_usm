@@ -11,7 +11,7 @@
         <div class="container-fluid">
         
             <div class="block-header">
-                <h2>Panel de Administración | Validación de Estudiantes</h2>
+                <h2>Panel de Administración | Validación de Asistentes</h2>
             </div>        
 
             <div class="row clearfix">
@@ -36,7 +36,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Sistema de Validación para {{$evento->nombre_evento}} &nbsp;</h2>
+                            <h2>Validación para: <b> {{$evento->nombre_evento}}</b> &nbsp;</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

@@ -1,6 +1,109 @@
 ﻿.theme-red .navbar {
   background-color: #F44336; }
 
+
+.theme-usm .navbar {
+  background-color: #074469;
+}
+
+.theme-usm .navbar-brand {
+  color: #fff; }
+  .theme-usm .navbar-brand:hover {
+    color: #fff; }
+  .theme-usm .navbar-brand:active {
+    color: #fff; }
+  .theme-usm .navbar-brand:focus {
+    color: #fff; }
+
+.theme-usm .nav > li > a {
+  color: #fff; }
+  .theme-usm .nav > li > a:hover {
+    background-color: transparent; }
+  .theme-usm .nav > li > a:focus {
+    background-color: transparent; }
+
+.theme-usm .nav .open > a {
+  background-color: transparent; }
+  .theme-usm .nav .open > a:hover {
+    background-color: transparent; }
+  .theme-usm .nav .open > a:focus {
+    background-color: transparent; }
+
+.theme-usm .bars {
+  color: #fff; }
+
+.theme-usm .sidebar .menu .list li.active {
+  background-color: transparent; }
+  .theme-usm .sidebar .menu .list li.active > :first-child i, .theme-usm .sidebar .menu .list li.active > :first-child span {
+    color: #074469; }
+
+.theme-usm .sidebar .menu .list .toggled {
+  background-color: transparent; }
+
+.theme-usm .sidebar .menu .list .ml-menu {
+  background-color: transparent; }
+
+.theme-usm .sidebar .legal {
+  background-color: #fff; }
+  .theme-usm .sidebar .legal .copyright a {
+    color: #074469 !important; }
+
+
+
+
+.theme-aca .navbar {
+  background-color: #2C2A6A;
+}
+
+.theme-aca .navbar-brand {
+  color: #fff; }
+  .theme-aca .navbar-brand:hover {
+    color: #fff; }
+  .theme-aca .navbar-brand:active {
+    color: #fff; }
+  .theme-aca .navbar-brand:focus {
+    color: #fff; }
+
+.theme-aca .nav > li > a {
+  color: #fff; }
+  .theme-aca .nav > li > a:hover {
+    background-color: transparent; }
+  .theme-aca .nav > li > a:focus {
+    background-color: transparent; }
+
+.theme-aca .nav .open > a {
+  background-color: transparent; }
+  .theme-aca .nav .open > a:hover {
+    background-color: transparent; }
+  .theme-aca .nav .open > a:focus {
+    background-color: transparent; }
+
+.theme-aca .bars {
+  color: #fff; }
+
+.theme-aca .sidebar .menu .list li.active {
+  background-color: transparent; }
+  .theme-aca .sidebar .menu .list li.active > :first-child i, .theme-aca .sidebar .menu .list li.active > :first-child span {
+    color: #2C2A6A; }
+
+.theme-aca .sidebar .menu .list .toggled {
+  background-color: transparent; }
+
+.theme-aca .sidebar .menu .list .ml-menu {
+  background-color: transparent; }
+
+.theme-aca .sidebar .legal {
+  background-color: #fff; }
+  .theme-aca .sidebar .legal .copyright a {
+    color: #2C2A6A !important; }
+
+
+
+
+
+
+
+
 .theme-red .navbar-brand {
   color: #fff; }
   .theme-red .navbar-brand:hover {

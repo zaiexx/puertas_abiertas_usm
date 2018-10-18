@@ -23,11 +23,11 @@ class CreateAlumnosTable extends Migration
             $table->string('apellido_paterno')->nullable();
             $table->string('apellido_materno')->nullable();
             $table->date('fecha_nacimiento')->nullable();
-            $table->char('sexo')->nullable();
+            $table->string('sexo')->nullable();
 
-            $table->string('region')->nullable();
+            $table->integer('region')->nullable();
             $table->string('comuna')->nullable();
-            $table->string('direccion')->nullable();
+            $table->string('colegio')->nullable();
             
 
             $table->string('email',60)->nullable();

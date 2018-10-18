@@ -11,7 +11,7 @@
 
        <div class="container-fluid">
             <div class="block-header">
-                <h2>Panel de Administración | Actividades</h2>
+                <h2>Panel de Administración | Mantención de actividades</h2>
             </div>        
 
             <div class="row clearfix">
@@ -36,7 +36,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Todas las Actividades &nbsp; <a href="{!! action('ActividadesController@create') !!}" title="Agregar Actividad" class ="btn bg-purple btn-xs waves-effect"><i class="material-icons">playlist_add</i>Agregar Actividad</a>
+                            <h2>Todas las Actividades Registradas&nbsp; <a href="{!! action('ActividadesController@create') !!}" title="Agregar Actividad" class ="btn bg-usm btn-xs waves-effect"><i class="material-icons">playlist_add</i>Agregar Actividad</a>
 
                             </h2>
                             <ul class="header-dropdown m-r--5">
@@ -69,7 +69,7 @@
                                             @else
                                                 <tr class="odd pointer">
                                             @endif
-                                            <td><span class="label bg-purple">{{$actividad[0]}}</span></td>
+                                            <td><span class="label bg-usm">{{$actividad[0]}}</span></td>
                                             <td>{{$actividad[1]}}</td>
                                              
                                             <td>

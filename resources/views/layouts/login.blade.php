@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Iniciar Sesión | Ingreso de Talleres USM</title>
+    <title>Iniciar Sesión | Puertas Abiertas USM 2018</title>
     <!-- Favicon-->
     <link rel="icon" href="{{ asset("favicon.ico") }}" type="image/x-icon">
 
@@ -23,13 +23,34 @@
 
     <!-- Custom Css -->
     <link href="{{ asset("css/style.css") }}" rel="stylesheet">
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("{{ asset("images/1.png") }}");
+
+            /* Full height */
+            height: auto; 
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
 </head>
 
-<body class="login-page">
+<body class="login-page bg">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">PUERTAS ABIERTAS USM</b></a>
-            <small>Sistema de ingreso de talleres</small>
+            <a href="javascript:void(0);"><img src="{{ asset("images/logo.png") }}" width="260" height="140"</a>
+            <small></small>
         </div>
         <div class="card">
             <div class="body">
@@ -68,7 +89,7 @@
                             <label for="rememberme">Recordarme</label>
                         </div>
                         <div class="col-xs-4">
-                            <button class="btn btn-block bg-pink waves-effect" type="submit">Log In!</button>
+                            <button class="btn btn-block bg-blue waves-effect" type="submit">Log In</button>
                         </div>
                     </div>
                     <div class="row m-t-15 m-b--20">

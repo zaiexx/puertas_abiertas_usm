@@ -11,7 +11,7 @@
         <div class="container-fluid">
         
             <div class="block-header">
-                <h2>Panel de Administración | Consulta Registro Talleres</h2>
+                <h2>Panel de Administración | Consulta registro de talleres</h2>
             </div>        
 
             <div class="row clearfix">
@@ -36,7 +36,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Sistema de Consulta de Inscripciones &nbsp;</h2>
+                            <h2>Consulta de Inscripciones de Talleres&nbsp;</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -54,7 +54,7 @@
                                 <label><span class="required">* </span>Rut</label>
                                 <div class="form-group">
                                     <div class="form-line">
-                                        {!! Form::text('rut', null, ['class'=>'form-control', 'placeholder' => "Ingresa el rut del alumno"])!!}
+                                        {!! Form::text('rut', null, ['class'=>'form-control', 'placeholder' => "Ingresa el rut del alumno, sin puntos ni guión"])!!}
                                     </div>
                                 </div>
 

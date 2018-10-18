@@ -31,7 +31,8 @@ class ValidacionForm extends Request
 
     public function messages() {
         return [
-            'rut.required' => 'Debes ingresar un rut',
+            'rut.numeric' => 'Debes ingresar rut sin digito verificador ni puntos',
+            'rut.required' => 'Debes ingresar un rut'
         ];
 
 

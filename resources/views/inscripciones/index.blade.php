@@ -11,7 +11,7 @@
         <div class="container-fluid">
         
             <div class="block-header">
-                <h2>Panel de Administración | Inscripción Talleres y Rutas</h2>
+                <h2>Panel de Administración | Inscripción Talleres y Rutas Puertas Abiertas 2018</h2>
             </div>        
 
             <div class="row clearfix">
@@ -51,7 +51,7 @@
 
                             {!! Form::open(['route' => 'inscripciones.procesar']) !!}
 
-                                <label><span class="required">* </span>Rut (Sin Dígito Verificador. Sin puntos)</label>
+                                <label><span class="required">* </span>Ingrese Rut (Sin Dígito Verificador. Sin puntos)</label>
                                 <div class="form-group">
                                     <div class="form-line">
                                         {!! Form::text('rut', null, ['class'=>'form-control', 'placeholder' => "Ej: 12345678"])!!}

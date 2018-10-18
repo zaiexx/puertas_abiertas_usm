@@ -1881,6 +1881,24 @@
   .bg-indigo .content .number {
     color: #fff !important; }
 
+.bg-usm {
+
+    background-color: #074469 !important;
+    color: #fff;}
+  .bg-usm .content .text,
+  .bg-usm .content .number {
+    color: #fff !important; }
+
+}
+
+.bg-aca {
+    background-color: #2C2A6A !important;
+    color: #fff;}
+    .bg-aca .content .text,
+   .bg-aca .content .number {
+    color: #fff !important; }
+}
+
 .bg-blue {
   background-color: #2196F3 !important;
   color: #fff; }

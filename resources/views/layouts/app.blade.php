@@ -8,7 +8,7 @@
 
 </head>
 
-<body class="theme-teal">
+<body class="theme-usm">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">

@@ -65,6 +65,21 @@
                                     </div>
                                 </div>
 
+                                <label><span class="required">*</span> Campus</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        {!! Form::select('eventos', $eventos, null, ['class' => 'form-control']) !!} 
+
+                                            @if ($errors->has('evento_id'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('evento_id') }}</strong>
+                                                </span>
+                                            @endif
+                                    </div>
+                                </div>
+
+
+
                                 <label><span class="required">*</span> Horario Inicio</label>
                                 <div class="form-group">
                                     <div class="form-line">

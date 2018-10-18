@@ -45,14 +45,22 @@ class ActividadesController extends Controller
      
 
         $horarios = \App\Horario::all();
+        $eventos = \App\Evento::all();
 
         $arr_horarios = array();
+        $arr_eventos = array();
 
         foreach ($horarios as $horario) {
-            $arr_horarios[$horario->id_horario] = $horario->nombre;
+            $arr_horarios[$horario->id_horario] = $horario->nombre." (".$horario->horario.")";
         }
 
-        return view('actividades.create')->with('horarios',$arr_horarios);
+        foreach ($eventos as $evento) {
+            $arr_eventos[$evento->id_evento] = $evento->nombre_evento;
+        }
+
+
+        return view('actividades.create')->with('horarios',$arr_horarios)
+                                         ->with('eventos', $arr_eventos);
 
     }
 
@@ -67,15 +75,17 @@ class ActividadesController extends Controller
      
 
         $input = $request->all();
-        dd($input);
 
-
+        dd("opcion no valida");
         $data = array();
 
         $actividad = new \App\Actividad;
+        $actividadEvento = new \App\ActividadEvento;
 
         $actividad->nombre_actividad = $input["nombre_actividad"];
         $actividad->descripcion = $input["descripcion"];
+
+
         $actividad->nombre_actividad = $input["nombre_actividad"];
         $actividad->nombre_actividad = $input["nombre_actividad"];
         $actividad->nombre_actividad = $input["nombre_actividad"];

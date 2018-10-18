@@ -158,14 +158,14 @@ class InscripcionesController extends Controller
         $alumno = \App\Alumno::where("rut",$rut)->first();
         if ($alumno != null) {
 
-            $eventoInscrito = \App\EventoInscrito::where('alumno_id',$alumno->id_alumno)->where('evento_id',2)->get();
+            $eventoInscrito = \App\EventoInscrito::where('alumno_id',$alumno->id_alumno)->where('evento_id',3)->get();
             if (count($eventoInscrito) > 0) {
                     return redirect()->route('inscripciones.show',array($rut))->with('message', 'Alumno registrado correctamente, puede inscribir taller');
             }else {
 
                 $inscripcion = new \App\EventoInscrito;
                 $inscripcion->alumno_id = $alumno->id_alumno;
-                $inscripcion->evento_id = 2;
+                $inscripcion->evento_id = 3;
                 $inscripcion->save();
                 return redirect()->route('inscripciones.show',array($rut))->with('message', 'Alumno registrado correctamente, puede inscribir taller');
 
@@ -217,29 +217,29 @@ class InscripcionesController extends Controller
 
             if ($id_bloque == 1) {
                 $hi = 1;
-                $ht = 2;
-            }else if ($id_bloque == 2) {
-                $hi = 3;
                 $ht = 4;
-            }else if ($id_bloque == 3) {
-                $hi = 5;
-                $ht = 6;
-            }else if ($id_bloque == 4) {
-                $hi = 7;
+            }else if ($id_bloque == 2) {
+                $hi = 4;
                 $ht = 8;
+            }else if ($id_bloque == 3) {
+                $hi = 9;
+                $ht = 13;
+            }else if ($id_bloque == 4) {
+                $hi = 27;
+                $ht = 28;
             
             }else if ($id_bloque == 5) {
-                $hi = 9;
-                $ht = 10;
+                $hi = 29;
+                $ht = 30;
             }else {
-                $hi = 11;
-                $ht = 12;
+                $hi = 31;
+                $ht = 32;
             }
 
             $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->orderBy('created_at','desc')->first();
             $id_evento = $eventoInscrito->evento_id;
             $actividades = \App\ActividadEvento::where('evento_id',$id_evento)->where(function ($query) use ($hi, $ht) {
-                    $query->where('hora_inicio_id',$hi)->orWhere('hora_inicio_id',$ht);
+                    $query->where('hora_inicio_id',">=",$hi)->where('hora_inicio_id',"<=",$ht);
                 })->get();
                     
             return view('inscripciones.show')->with('actividades', $actividades)
@@ -255,16 +255,19 @@ class InscripcionesController extends Controller
     public function postConsultar (InscripcionesForm $request) {
 
         $input = $request->all();
+
         $alumno = \App\Alumno::where('rut',$input['rut'])->first();
 
-        if ($alumno != null) {
+
+        if (!empty($alumno)) {
             $id_alumno = $alumno->id_alumno;
+
             $actividadesEventosInscritos = \App\ActividadEventoInscrito::where('alumno_id',$id_alumno)->orderBy('created_at','desc')->first();
             if($actividadesEventosInscritos != null) {
                 return redirect()->route('home.show',array($alumno->rut))->with('message','El alumno se encuentra registrado en las siguientes actividades')
                                                  ->with('actividades',$actividadesEventosInscritos); 
             }else {
-                return redirect()->route('home.index')->withErrors('El alumno no se encuentra validado');                     
+                return redirect()->route('home.index')->withErrors('El alumno no se encuentra registrado en ninguna actividad');                     
             }                    
 
         }else {

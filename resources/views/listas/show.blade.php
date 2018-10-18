@@ -36,7 +36,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Todas los Alumnos &nbsp; <a href="{!! action('ListasController@index') !!}" title="Volver" class ="btn bg-purple btn-xs waves-effect"><i class="material-icons">keyboard_backspace</i>Volver</a></h2>
+                            <h2>Todas los Alumnos &nbsp; <a href="{!! action('ListasController@index') !!}" title="Volver" class ="btn bg-usm btn-xs waves-effect"><i class="material-icons">keyboard_backspace</i>Volver</a></h2>
 
                             </h2>
                             <ul class="header-dropdown m-r--5">
@@ -73,7 +73,7 @@
                                                 <tr class="odd pointer">
                                             @endif
                                             <td>{{$alumno[4]}}</td>
-                                            <td><span class="label bg-purple">{{$alumno[0]}}</span></td>
+                                            <td><span class="label bg-usm">{{$alumno[0]}}</span></td>
                                             <td>{{$alumno[1]}}</td>
                                             <td>{{$alumno[2]}}</td>
                                             <td>{{$alumno[3]}}</td>

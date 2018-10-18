@@ -71,7 +71,7 @@
                                             @else
                                                 <tr class="odd pointer">
                                             @endif
-                                            <td><span class="label bg-purple">{{$actividad[0]}}</span></td>
+                                            <td><span class="label bg-usm">{{$actividad[0]}}</span></td>
                                             <td>{{$actividad[1]}}</td>
                                             <td>{{$actividad[2]}}</td>
                                             <td>

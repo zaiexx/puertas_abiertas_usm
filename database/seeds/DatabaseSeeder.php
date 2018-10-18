@@ -359,7 +359,7 @@ class CarreraTableSeeder extends Seeder {
 
         Carrera::create([
             'id_carrera'          => 6,
-            'nombre_carrera'      => 'Ingeniería Civil de Minas',
+            'nombre_carrera'      => 'Ingeniería Civil en Minas',
             'sede_id'             => 1
         ]);
 
@@ -462,6 +462,26 @@ class CarreraTableSeeder extends Seeder {
             'sede_id'             => 2
         ]);
 
+        Carrera::create([
+            'id_carrera'          => 23,
+            'nombre_carrera'      => 'Carreras Indeterminadas Vitacura',
+            'sede_id'             => 2,
+        ]);
+
+        Carrera::create([
+            'id_carrera'          => 24,
+            'nombre_carrera'      => 'Carreras Indeterminadas San Joaquín',
+            'sede_id'             => 1,
+        ]);
+
+        Carrera::create([
+            'id_carrera'          => 25,
+            'nombre_carrera'      => 'ACA',
+            'sede_id'             => 2,
+        ]);
+
+
+
     }
 
 }
@@ -470,736 +490,374 @@ class CarreraTableSeeder extends Seeder {
 class ActividadTableSeeder extends Seeder {
 
     public function run() {
-        
+
+
         Actividad::create([
             'id_actividad'           => 1,
-            'nombre_actividad'       => 'Kit Solar',
-            'descripcion'            => 'Taller de Kit Solar',
-            'tipo_actividad'         => 'Taller', 
-            'carrera_id'             => 5           
+            'nombre_actividad'       => '¿Leche y Adhesivos?',
+            'descripcion'            => '¿Leche y Adhesivos?',
+            'tipo_actividad'         => '¿Leche y Adhesivos?',
+            'carrera_id'             => 7
         ]);
-        
         Actividad::create([
             'id_actividad'           => 2,
-            'nombre_actividad'       => 'Diseño 3D',
-            'descripcion'            => 'Taller de Diseño 3D',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 5            
+            'nombre_actividad'       => 'Aquiles y la Tortuga',
+            'descripcion'            => 'Aquiles y la Tortuga',
+            'tipo_actividad'         => 'Aquiles y la Tortuga',
+            'carrera_id'             => 4
         ]);
-
-        
-
         Actividad::create([
             'id_actividad'           => 3,
-            'nombre_actividad'       => 'Taller Metalmecánico',
-            'descripcion'            => 'Taller Metalmecánico',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 5            
+            'nombre_actividad'       => 'Autos Hidráulicos',
+            'descripcion'            => 'Autos Hidráulicos',
+            'tipo_actividad'         => 'Autos Hidráulicos',
+            'carrera_id'             => 10
         ]);
-
         Actividad::create([
             'id_actividad'           => 4,
-            'nombre_actividad'       => 'Desarme de bomba',
-            'descripcion'            => 'Taller de Desarme de Bomba',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 5            
+            'nombre_actividad'       => 'Balsamo Labial',
+            'descripcion'            => 'Balsamo Labial',
+            'tipo_actividad'         => 'Balsamo Labial',
+            'carrera_id'             => 7
         ]);
-
-        
         Actividad::create([
             'id_actividad'           => 5,
-            'nombre_actividad'       => 'Mi primera página web',
-            'descripcion'            => 'Taller de creación de páginas web',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 3            
+            'nombre_actividad'       => 'Bobina de Tesla',
+            'descripcion'            => 'Bobina de Tesla',
+            'tipo_actividad'         => 'Bobina de Tesla',
+            'carrera_id'             => 2
         ]);
-
-        
         Actividad::create([
             'id_actividad'           => 6,
-            'nombre_actividad'       => 'Lego',
-            'descripcion'            => 'Taller de Lego',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 3            
+            'nombre_actividad'       => 'Burbujas y minerales',
+            'descripcion'            => 'Burbujas y minerales',
+            'tipo_actividad'         => 'Burbujas y minerales',
+            'carrera_id'             => 6
         ]);
-
-        
         Actividad::create([
             'id_actividad'           => 7,
-            'nombre_actividad'       => 'Taller de Python',
-            'descripcion'            => 'Taller de Python',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 3            
+            'nombre_actividad'       => 'Capturing Fools',
+            'descripcion'            => 'Capturing Fools',
+            'tipo_actividad'         => 'Capturing Fools',
+            'carrera_id'             => 12
         ]);
-
-        
         Actividad::create([
             'id_actividad'           => 8,
-            'nombre_actividad'       => 'Taller de adhesivos',
-            'descripcion'            => 'Taller de adhesivos',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 7            
+            'nombre_actividad'       => 'Centro de Control de Operaciones',
+            'descripcion'            => 'Centro de Control de Operaciones',
+            'tipo_actividad'         => 'Centro de Control de Operaciones',
+            'carrera_id'             => 25
         ]);
-
         Actividad::create([
             'id_actividad'           => 9,
-            'nombre_actividad'       => 'Ruta de Química',
-            'descripcion'            => 'Taller de Química',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 7            
+            'nombre_actividad'       => 'Charla al infinito y mas alla',
+            'descripcion'            => 'Charla al infinito y mas alla',
+            'tipo_actividad'         => 'Charla al infinito y mas alla',
+            'carrera_id'             => 4
         ]);
-
         Actividad::create([
             'id_actividad'           => 10,
-            'nombre_actividad'       => 'Preparando Cremas',
-            'descripcion'            => 'Taller de preparación de cremas',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 7            
+            'nombre_actividad'       => 'Charla Comercial',
+            'descripcion'            => 'Charla Comercial',
+            'tipo_actividad'         => 'Charla Comercial',
+            'carrera_id'             => 12
         ]);
-        
         Actividad::create([
             'id_actividad'           => 11,
-            'nombre_actividad'       => 'Elaborando Shampoo',
-            'descripcion'            => 'Taller de preparación de Shampoo',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 7            
+            'nombre_actividad'       => 'Charla Electromovilidad',
+            'descripcion'            => 'Charla Electromovilidad',
+            'tipo_actividad'         => 'Charla Electromovilidad',
+            'carrera_id'             => 5
         ]);
-
         Actividad::create([
             'id_actividad'           => 12,
-            'nombre_actividad'       => 'Un civil en todas las áreas',
-            'descripcion'            => 'Taller de Ing. Civil',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 1            
+            'nombre_actividad'       => 'Charla Industrial',
+            'descripcion'            => 'Charla Industrial',
+            'tipo_actividad'         => 'Charla Industrial',
+            'carrera_id'             => 10
         ]);
-
         Actividad::create([
             'id_actividad'           => 13,
-            'nombre_actividad'       => 'Rayos y centellas',
-            'descripcion'            => 'Taller de Ing. Eléctrica',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 2            
+            'nombre_actividad'       => 'Charla Mi experiencia en Ing Electrica',
+            'descripcion'            => 'Charla Mi experiencia en Ing Electrica',
+            'tipo_actividad'         => 'Charla Mi experiencia en Ing Electrica',
+            'carrera_id'             => 2
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 14,
-            'nombre_actividad'       => 'Motores en la red',
-            'descripcion'            => 'Taller de Ing. Eléctrica',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 2            
+            'nombre_actividad'       => 'Charla programacion competitiva',
+            'descripcion'            => 'Charla programacion competitiva',
+            'tipo_actividad'         => 'Charla programacion competitiva',
+            'carrera_id'             => 3
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 15,
-            'nombre_actividad'       => 'Telarañas en la Red',
-            'descripcion'            => 'Taller de Ing. Eléctrica',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 2            
+            'nombre_actividad'       => 'Charla Rol de la Mujer en la Ing Mec',
+            'descripcion'            => 'Charla Rol de la Mujer en la Ing Mec',
+            'tipo_actividad'         => 'Charla Rol de la Mujer en la Ing Mec',
+            'carrera_id'             => 5
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 16,
-            'nombre_actividad'       => 'Escalera de Jacob',
-            'descripcion'            => 'Taller de Ing. Eléctrica',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 2            
+            'nombre_actividad'       => 'Charla Sansano Controlando Estructuras',
+            'descripcion'            => 'Charla Sansano Controlando Estructuras',
+            'tipo_actividad'         => 'Charla Sansano Controlando Estructuras',
+            'carrera_id'             => 1
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 17,
-            'nombre_actividad'       => 'Buscando a Pi',
-            'descripcion'            => 'Taller de Ing. Matemática',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 4            
+            'nombre_actividad'       => 'Ciudades Inteligentes',
+            'descripcion'            => 'Ciudades Inteligentes',
+            'tipo_actividad'         => 'Ciudades Inteligentes',
+            'carrera_id'             => 23
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 18,
-            'nombre_actividad'       => 'Aquiles y la Tortuga',
-            'descripcion'            => 'Taller de Ing. Matemática',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 4            
+            'nombre_actividad'       => 'Controlando el Caos',
+            'descripcion'            => 'Controlando el Caos',
+            'tipo_actividad'         => 'Controlando el Caos',
+            'carrera_id'             => 4
         ]);
-
         Actividad::create([
             'id_actividad'           => 19,
-            'nombre_actividad'       => 'Extrayendo Minerales ',
-            'descripcion'            => 'Taller de Ing. en Minas',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 6            
+            'nombre_actividad'       => 'Creando Cremas',
+            'descripcion'            => 'Creando Cremas',
+            'tipo_actividad'         => 'Creando Cremas',
+            'carrera_id'             => 7
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 20,
-            'nombre_actividad'       => 'Masticando Rocas',
-            'descripcion'            => 'Taller de Ing. en Minas',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 6            
+            'nombre_actividad'       => 'Desarma la Bomba',
+            'descripcion'            => 'Desarma la Bomba',
+            'tipo_actividad'         => 'Desarma la Bomba',
+            'carrera_id'             => 5
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 21,
-            'nombre_actividad'       => 'En busca del cobre',
-            'descripcion'            => 'Taller de Ing. en Minas',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 6            
+            'nombre_actividad'       => 'Desarrollo Aeroespacial',
+            'descripcion'            => 'Desarrollo Aeroespacial',
+            'tipo_actividad'         => 'Desarrollo Aeroespacial',
+            'carrera_id'             => 25
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 22,
-            'nombre_actividad'       => 'Aplastando la Roca',
-            'descripcion'            => 'Taller de Ing. en Minas',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 6            
+            'nombre_actividad'       => 'El Rayo de Zeus',
+            'descripcion'            => 'El Rayo de Zeus',
+            'tipo_actividad'         => 'El Rayo de Zeus',
+            'carrera_id'             => 2
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 23,
-            'nombre_actividad'       => 'Capturing fools',
-            'descripcion'            => 'Taller de Ing. Comercial',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 12            
+            'nombre_actividad'       => 'Electrocobrecito',
+            'descripcion'            => 'Electrocobrecito',
+            'tipo_actividad'         => 'Electrocobrecito',
+            'carrera_id'             => 6
         ]);
-
         Actividad::create([
             'id_actividad'           => 24,
-            'nombre_actividad'       => 'Innovación y Emprendimiento en la USM',
-            'descripcion'            => 'Taller de Ing. Civil Industrial',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 10            
+            'nombre_actividad'       => 'Electrónica Aeronáutica',
+            'descripcion'            => 'Electrónica Aeronáutica',
+            'tipo_actividad'         => 'Electrónica Aeronáutica',
+            'carrera_id'             => 25
         ]);
-
         Actividad::create([
             'id_actividad'           => 25,
-            'nombre_actividad'       => 'Fabrica tu avión',
-            'descripcion'            => 'Taller de ACA',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 13            
+            'nombre_actividad'       => 'Fabrica tu Avión',
+            'descripcion'            => 'Fabrica tu Avión',
+            'tipo_actividad'         => 'Fabrica tu Avión',
+            'carrera_id'             => 25
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 26,
-            'nombre_actividad'       => 'Taller de Arduino',
-            'descripcion'            => 'Taller de FabLab',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 14            
+            'nombre_actividad'       => 'Go Up! Experiencia de Mercado',
+            'descripcion'            => 'Go Up! Experiencia de Mercado',
+            'tipo_actividad'         => 'Go Up! Experiencia de Mercado',
+            'carrera_id'             => 23
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 27,
-            'nombre_actividad'       => 'Taller de Negocios',
-            'descripcion'            => 'Taller de Negocios',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 9            
+            'nombre_actividad'       => 'Industria Aerocomercial',
+            'descripcion'            => 'Industria Aerocomercial',
+            'tipo_actividad'         => 'Industria Aerocomercial',
+            'carrera_id'             => 25
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 28,
-            'nombre_actividad'       => 'Taller de Diseño',
-            'descripcion'            => 'Taller de Diseño',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 9            
+            'nombre_actividad'       => 'Int. Al análisis y minería de datos en R',
+            'descripcion'            => 'Int. Al análisis y minería de datos en R',
+            'tipo_actividad'         => 'Int. Al análisis y minería de datos en R',
+            'carrera_id'             => 3
         ]);
-
         Actividad::create([
             'id_actividad'           => 29,
-            'nombre_actividad'       => 'Ingeniero Civil Mecanico: Pasado, presente y futuro',
-            'descripcion'            => 'Charla de Mecánica',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 5            
+            'nombre_actividad'       => 'Introducción a la minería',
+            'descripcion'            => 'Introducción a la minería',
+            'tipo_actividad'         => 'Introducción a la minería',
+            'carrera_id'             => 6
         ]);
-
-
         Actividad::create([
             'id_actividad'           => 30,
-            'nombre_actividad'       => 'Charla Mitos y verdades sobre la ingeniería Informática',
-            'descripcion'            => 'Charla de Informática',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 3            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 31,
-            'nombre_actividad'       => 'Mi experiencia en la Universidad',
-            'descripcion'            => 'Charla de Química',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 7            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 32,
-            'nombre_actividad'       => 'Civil Time',
-            'descripcion'            => 'Charla de Civil',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 1            
-        ]);
-
-    
-        Actividad::create([
-            'id_actividad'           => 33,
-            'nombre_actividad'       => 'Al infinito y más alla',
-            'descripcion'            => 'Charla de Matemática',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 4            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 34,
-            'nombre_actividad'       => 'Física de altas energias en la usm',
-            'descripcion'            => 'Charla de Física',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 15            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 35,
-            'nombre_actividad'       => 'Física de materia condensada',
-            'descripcion'            => 'Charla de Física',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 15            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 36,
-            'nombre_actividad'       => '¿Qué es el CIAC?',
-            'descripcion'            => 'Charla del CIAC',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 16            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 37,
-            'nombre_actividad'       => '¿Qué es un Fablab?',
-            'descripcion'            => 'Charla del Fablab',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 14            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 38,
-            'nombre_actividad'       => 'Mitos de la Ingeniería Civil',
-            'descripcion'            => 'Mitos de la Ingeniería Civil',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 1            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 39,
-            'nombre_actividad'       => 'El futuro de la Ingeniería Mecánica' ,
-            'descripcion'            => 'El futuro de la Ingeniería Mecánica',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 14            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 40,
-            'nombre_actividad'       => 'CNC',
-            'descripcion'            => 'Muestra de una CNC',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 5            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 41,
-            'nombre_actividad'       => 'Cañón de combustión',
-            'descripcion'            => 'Muestra de un Cañón de combustión',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 5            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 42,
-            'nombre_actividad'       => 'HolSense',
-            'descripcion'            => 'Muestra de HolSense',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 3            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 43,
-            'nombre_actividad'       => 'Tingo ID',
-            'descripcion'            => 'Muestra de Tingo ID',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 3            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 44,
-            'nombre_actividad'       => 'Torre de Enfriamineto',
-            'descripcion'            => 'Muestra de Torre de enfriamineto',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 7            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 45,
-            'nombre_actividad'       => 'Celda de Flotación',
-            'descripcion'            => 'Muestra de Celda de flotación  ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 7            
-        ]);
-
-
-
-        Actividad::create([
-            'id_actividad'           => 46,
-            'nombre_actividad'       => 'Canal Hidráulico',
-            'descripcion'            => 'Muestra de Canal Hidráulico      ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 1            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 47,
-            'nombre_actividad'       => 'Licuefacción de Suelos',
-            'descripcion'            => 'Muestra de Licuefacción de Suelos ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 1            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 48,
-            'nombre_actividad'       => 'Van de Graaff',
-            'descripcion'            => 'Muestra de Van de Graaff  ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 2            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 49,
-            'nombre_actividad'       => 'Mini Bobina de Tesla',
-            'descripcion'            => 'Muestra de Mini Bobina de Tesla  ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 2            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 50,
-            'nombre_actividad'       => 'Bicicleta de generación Eléctrica 3.0',
-            'descripcion'            => 'Muestra de generación eléctrica  ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 2            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 51,
-            'nombre_actividad'       => 'Bobinas Flotantes',
-            'descripcion'            => 'Muestra de Bobinas Flotantes  ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 2            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 52,
-            'nombre_actividad'       => 'Escalera de jacob',
-            'descripcion'            => 'Muestra de Escalera de jacob  ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 2            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 53,
-            'nombre_actividad'       => 'Competencia de dados',
-            'descripcion'            => 'Muestra de Competencia de dados ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 4            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 54,
-            'nombre_actividad'       => 'Pendulo dobles',
-            'descripcion'            => 'Muestra de Pendulo doble ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 4            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 55,
-            'nombre_actividad'       => 'Maquina de galton' ,
-            'descripcion'            => 'Muestra de Maquina de galton ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 4            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 56,
-            'nombre_actividad'       => 'Molino de Bolas' ,
-            'descripcion'            => 'Muestra de Molino de Bolas ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 6            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 57,
-            'nombre_actividad'       => 'Lupa y Muestra de Minerales' ,
-            'descripcion'            => 'Muestra de Lupa y Muestra de Minerales ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 6            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 58,
-            'nombre_actividad'       => 'El Departamento de Física' ,
-            'descripcion'            => 'Muestra del Departamento de Física ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 15            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 59,
-            'nombre_actividad'       => 'Líderes de Mañana' ,
-            'descripcion'            => 'Muestra de Líderes del Mañana ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 12            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 60,
-            'nombre_actividad'       => 'Clasificador Óptico' ,
-            'descripcion'            => 'Muestra de Clasificador Óptico ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 10            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 61,
-            'nombre_actividad'       => 'Tecnologías Interactivas' ,
-            'descripcion'            => 'Muestra de Tecnologías Interactivas ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 18            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 62,
-            'nombre_actividad'       => 'Ergon' ,
-            'descripcion'            => 'Muestra de Ergon ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 17            
-        ]);
-
-
-
-        Actividad::create([
-            'id_actividad'           => 63,
-            'nombre_actividad'       => 'Defider' ,
-            'descripcion'            => 'Muestra de Defider ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 19            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 64,
-            'nombre_actividad'       => 'Stand Saludable' ,
-            'descripcion'            => 'Muestra de Stand Saludable ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 19            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 65,
-            'nombre_actividad'       => 'FabLab USM' ,
-            'descripcion'            => 'Muestra de Fablab USM ',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 14            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 66,
-            'nombre_actividad'       => 'Marketing Digital' ,
-            'descripcion'            => 'Taller de Marketing Digital',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 12            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 67,
-            'nombre_actividad'       => 'Vuelo Estacionario' ,
-            'descripcion'            => 'Taller de Vuelo Estacionario',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 21            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 68,
-            'nombre_actividad'       => 'Juego de Emprendimiento' ,
-            'descripcion'            => 'Juego de Emprendimiento',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 12            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 69,
-            'nombre_actividad'       => 'Electrónica Aeronáutica' ,
-            'descripcion'            => 'Taller de Electrónica Aeronáutica',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 13            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 70,
-            'nombre_actividad'       => 'Ruta de Física' ,
-            'descripcion'            => 'Ruta de Física',
-            'tipo_actividad'         => 'Ruta',
-            'carrera_id'             => 15            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 71,
-            'nombre_actividad'       => 'Zona de Emprendedores' ,
-            'descripcion'            => 'Zona de Emprendedores',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 22            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 72,
-            'nombre_actividad'       => 'Satélites de Observación' ,
-            'descripcion'            => 'Satélites de Observación',
-            'tipo_actividad'         => 'Muestra',
-            'carrera_id'             => 11            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 73,
-            'nombre_actividad'       => 'Cuestión de Talentos' ,
-            'descripcion'            => 'Cuestión de Talentos',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 12            
-        ]);
-
-
-        Actividad::create([
-            'id_actividad'           => 74,
-            'nombre_actividad'       => 'Simulación de Procesos Productivos' ,
-            'descripcion'            => 'Simulación de Procesos Productivos',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 10            
-        ]);
-        
-
-        Actividad::create([
-            'id_actividad'           => 75,
-            'nombre_actividad'       => 'Autos Solares',
-            'descripcion'            => 'Autos Solares',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 10            
-        ]);
-        
-        Actividad::create([
-            'id_actividad'           => 76,
             'nombre_actividad'       => 'Juego de la Bolsa',
             'descripcion'            => 'Juego de la Bolsa',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 10            
+            'tipo_actividad'         => 'Juego de la Bolsa',
+            'carrera_id'             => 10
         ]);
-
-
         Actividad::create([
-            'id_actividad'           => 77,
-            'nombre_actividad'       => 'Desafíos de Física',
-            'descripcion'            => 'Desafíos de Física',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 14            
+            'id_actividad'           => 31,
+            'nombre_actividad'       => 'Kit Solar',
+            'descripcion'            => 'Kit Solar',
+            'tipo_actividad'         => 'Kit Solar',
+            'carrera_id'             => 5
         ]);
-
-
         Actividad::create([
-            'id_actividad'           => 78,
-            'nombre_actividad'       => 'Aerolíneas Low cost',
-            'descripcion'            => 'Aerolíneas Low cost',
-            'tipo_actividad'         => 'Charla',
-            'carrera_id'             => 11            
+            'id_actividad'           => 32,
+            'nombre_actividad'       => 'Laboratorios Quimica',
+            'descripcion'            => 'Laboratorios Quimica',
+            'tipo_actividad'         => 'Laboratorios Quimica',
+            'carrera_id'             => 24
+        ]);
+        Actividad::create([
+            'id_actividad'           => 33,
+            'nombre_actividad'       => 'Martillo de Thor',
+            'descripcion'            => 'Martillo de Thor',
+            'tipo_actividad'         => 'Martillo de Thor',
+            'carrera_id'             => 5
+        ]);
+        Actividad::create([
+            'id_actividad'           => 34,
+            'nombre_actividad'       => 'Masticando Rocas',
+            'descripcion'            => 'Masticando Rocas',
+            'tipo_actividad'         => 'Masticando Rocas',
+            'carrera_id'             => 6
+        ]);
+        Actividad::create([
+            'id_actividad'           => 35,
+            'nombre_actividad'       => 'Mazmorra de Kithgar',
+            'descripcion'            => 'Mazmorra de Kithgar',
+            'tipo_actividad'         => 'Mazmorra de Kithgar',
+            'carrera_id'             => 3
+        ]);
+        Actividad::create([
+            'id_actividad'           => 36,
+            'nombre_actividad'       => 'Mecánico 3D',
+            'descripcion'            => 'Mecánico 3D',
+            'tipo_actividad'         => 'Mecánico 3D',
+            'carrera_id'             => 5
+        ]);
+        Actividad::create([
+            'id_actividad'           => 37,
+            'nombre_actividad'       => 'Minecraft, el viaje del heroe',
+            'descripcion'            => 'Minecraft, el viaje del heroe',
+            'tipo_actividad'         => 'Minecraft, el viaje del heroe',
+            'carrera_id'             => 3
+        ]);
+        Actividad::create([
+            'id_actividad'           => 38,
+            'nombre_actividad'       => 'Modelamiento Ilógico',
+            'descripcion'            => 'Modelamiento Ilógico',
+            'tipo_actividad'         => 'Modelamiento Ilógico',
+            'carrera_id'             => 4
+        ]);
+        Actividad::create([
+            'id_actividad'           => 39,
+            'nombre_actividad'       => 'Planifica tu vuelo',
+            'descripcion'            => 'Planifica tu vuelo',
+            'tipo_actividad'         => 'Planifica tu vuelo',
+            'carrera_id'             => 25
+        ]);
+        Actividad::create([
+            'id_actividad'           => 40,
+            'nombre_actividad'       => 'Rocología',
+            'descripcion'            => 'Rocología',
+            'tipo_actividad'         => 'Rocología',
+            'carrera_id'             => 6
+        ]);
+        Actividad::create([
+            'id_actividad'           => 41,
+            'nombre_actividad'       => 'Ruta Física',
+            'descripcion'            => 'Ruta Física',
+            'tipo_actividad'         => 'Ruta Física',
+            'carrera_id'             => 24
+        ]);
+        Actividad::create([
+            'id_actividad'           => 42,
+            'nombre_actividad'       => 'Ruta Química',
+            'descripcion'            => 'Ruta Química',
+            'tipo_actividad'         => 'Ruta Química',
+            'carrera_id'             => 23
+        ]);
+        Actividad::create([
+            'id_actividad'           => 43,
+            'nombre_actividad'       => 'Smart Cities',
+            'descripcion'            => 'Smart Cities',
+            'tipo_actividad'         => 'Smart Cities',
+            'carrera_id'             => 18
+        ]);
+        Actividad::create([
+            'id_actividad'           => 44,
+            'nombre_actividad'       => 'Taller de Diseño',
+            'descripcion'            => 'Taller de Diseño',
+            'tipo_actividad'         => 'Taller de Diseño',
+            'carrera_id'             => 23
+        ]);
+        Actividad::create([
+            'id_actividad'           => 45,
+            'nombre_actividad'       => 'Taller de Negocios',
+            'descripcion'            => 'Taller de Negocios',
+            'tipo_actividad'         => 'Taller de Negocios',
+            'carrera_id'             => 23
+        ]);
+        Actividad::create([
+            'id_actividad'           => 46,
+            'nombre_actividad'       => 'Taller de Tecnologia',
+            'descripcion'            => 'Taller de Tecnologia',
+            'tipo_actividad'         => 'Taller de Tecnologia',
+            'carrera_id'             => 9
+        ]);
+        Actividad::create([
+            'id_actividad'           => 47,
+            'nombre_actividad'       => 'Tecnologia Mecanica',
+            'descripcion'            => 'Tecnologia Mecanica',
+            'tipo_actividad'         => 'Tecnologia Mecanica',
+            'carrera_id'             => 5
+        ]);
+        Actividad::create([
+            'id_actividad'           => 48,
+            'nombre_actividad'       => 'Termofluidos y Automatizacion',
+            'descripcion'            => 'Termofluidos y Automatizacion',
+            'tipo_actividad'         => 'Termofluidos y Automatizacion',
+            'carrera_id'             => 5
+        ]);
+        Actividad::create([
+            'id_actividad'           => 49,
+            'nombre_actividad'       => 'Terra Nov UP',
+            'descripcion'            => 'Terra Nov UP',
+            'tipo_actividad'         => 'Terra Nov UP',
+            'carrera_id'             => 12
+        ]);
+        Actividad::create([
+            'id_actividad'           => 50,
+            'nombre_actividad'       => 'Trabajando con las Maquinas',
+            'descripcion'            => 'Trabajando con las Maquinas',
+            'tipo_actividad'         => 'Trabajando con las Maquinas',
+            'carrera_id'             => 2
+        ]);
+        Actividad::create([
+            'id_actividad'           => 51,
+            'nombre_actividad'       => 'Turtle, Dibujando patrones',
+            'descripcion'            => 'Turtle, Dibujando patrones',
+            'tipo_actividad'         => 'Turtle, Dibujando patrones',
+            'carrera_id'             => 3
+        ]);
+        Actividad::create([
+            'id_actividad'           => 52,
+            'nombre_actividad'       => 'Un civil en todas las areas',
+            'descripcion'            => 'Un civil en todas las areas',
+            'tipo_actividad'         => 'Un civil en todas las areas',
+            'carrera_id'             => 1
         ]);
 
-        Actividad::create([
-            'id_actividad'           => 79,
-            'nombre_actividad'       => 'Planifica tu Vuelo',
-            'descripcion'            => 'Planifica tu Vuelo',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 21            
-        ]);
-       
-        Actividad::create([
-            'id_actividad'           => 80,
-            'nombre_actividad'       => 'Innovación y Emprendimiento en la Red',
-            'descripcion'            => 'Innovación y Emprendimiento en la Red',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 10            
-        ]);
-       
-        Actividad::create([
-            'id_actividad'           => 81,
-            'nombre_actividad'       => 'Taller de Producción',
-            'descripcion'            => 'Taller de Producción',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 10            
-        ]);
-       
-        Actividad::create([
-            'id_actividad'           => 82,
-            'nombre_actividad'       => 'Formación de Piloto',
-            'descripcion'            => 'Formación de Piloto',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 21            
-        ]);
-       
-        Actividad::create([
-            'id_actividad'           => 83,
-            'nombre_actividad'       => 'Aeronáutica y Espacio' ,
-            'descripcion'            => 'Aeronáutica y Espacio',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 11            
-        ]);
-
-        Actividad::create([
-            'id_actividad'           => 84,
-            'nombre_actividad'       => 'Taller de Emprendimiento' ,
-            'descripcion'            => 'Taller de Emprendimiento',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 22            
-        ]);
-
-
-
-        Actividad::create([
-            'id_actividad'           => 85,
-            'nombre_actividad'       => 'Ensayo PSU de Matemáticas' ,
-            'descripcion'            => 'Ensayo PSU',
-            'tipo_actividad'         => 'Taller',
-            'carrera_id'             => 20            
-        ]);
-
-  
-     }
-
+    }
 
 }
 
@@ -1212,2367 +870,304 @@ class ActividadEventoTableSeeder extends Seeder{
 
         // DB::table('role')->truncate(),
 
-        ActividadEvento::create([
-
+ ActividadEvento::create([
             'id_actividad_evento'    => 1,
-            'actividad_id'           => 66,
+            'actividad_id'           => 41,
             'evento_id'              => 3,
-
+            'cupos'                  => 15,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 1,
+            'hora_termino_id'        => 3
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 2,
+            'actividad_id'           => 42,
+            'evento_id'              => 3,
+            'cupos'                  => 24,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 1,
+            'hora_termino_id'        => 3
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 3,
+            'actividad_id'           => 7,
+            'evento_id'              => 3,
+            'cupos'                  => 60,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 1,
+            'hora_termino_id'        => 3
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 4,
+            'actividad_id'           => 25,
+            'evento_id'              => 3,
+            'cupos'                  => 14,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 1,
+            'hora_termino_id'        => 3
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 5,
+            'actividad_id'           => 39,
+            'evento_id'              => 3,
             'cupos'                  => 40,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
+            'hora_termino_id'        => 3
         ]);
-
-
-
         ActividadEvento::create([
-
-            'id_actividad_evento'    => 2,
-            'actividad_id'           => 67,
+            'id_actividad_evento'    => 6,
+            'actividad_id'           => 30,
             'evento_id'              => 3,
-
-            'cupos'                  => 115,
+            'cupos'                  => 40,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
+            'hora_termino_id'        => 3
         ]);
-
-
         ActividadEvento::create([
-
-            'id_actividad_evento'    => 3,
-            'actividad_id'           => 24,
+            'id_actividad_evento'    => 7,
+            'actividad_id'           => 17,
             'evento_id'              => 3,
-
+            'cupos'                  => 30,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 1,
+            'hora_termino_id'        => 4
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 8,
+            'actividad_id'           => 12,
+            'evento_id'              => 3,
             'cupos'                  => 128,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
+            'hora_termino_id'        => 4
         ]);
-
-
         ActividadEvento::create([
-
-            'id_actividad_evento'    => 4,
-            'actividad_id'           => 68,
-            'evento_id'              => 3,
-
-            'cupos'                  => 80,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 5,
-            'actividad_id'           => 25,
-            'evento_id'              => 3,
-
-            'cupos'                  => 14,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 6,
-            'actividad_id'           => 9,
-            'evento_id'              => 3,
-
-            'cupos'                  => 24,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 7,
-            'actividad_id'           => 69,
-            'evento_id'              => 3,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 8,
-            'actividad_id'           => 70,
-            'evento_id'              => 3,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
-        ]);
-
-
-        ActividadEvento::create([
-
             'id_actividad_evento'    => 9,
-            'actividad_id'           => 71,
+            'actividad_id'           => 21,
             'evento_id'              => 3,
-
-            'cupos'                  => 60,
+            'cupos'                  => 84,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 4,
-
+            'hora_termino_id'        => 3
         ]);
-
-
         ActividadEvento::create([
-
             'id_actividad_evento'    => 10,
-            'actividad_id'           => 72,
+            'actividad_id'           => 24,
             'evento_id'              => 3,
-
-            'cupos'                  => 20,
+            'cupos'                  => 14,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 4,
-
+            'hora_termino_id'        => 3
         ]);
-
-
         ActividadEvento::create([
-
             'id_actividad_evento'    => 11,
-            'actividad_id'           => 73,
+            'actividad_id'           => 45,
             'evento_id'              => 3,
-
-            'cupos'                  => 110,
+            'cupos'                  => 32,
             'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
+            'hora_inicio_id'         => 1,
+            'hora_termino_id'        => 3
         ]);
-
-
         ActividadEvento::create([
-
             'id_actividad_evento'    => 12,
-            'actividad_id'           => 74,
+            'actividad_id'           => 41,
             'evento_id'              => 3,
-
-            'cupos'                  => 90,
+            'cupos'                  => 15,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 8,
-
+            'hora_termino_id'        => 7
         ]);
-
-
         ActividadEvento::create([
-
             'id_actividad_evento'    => 13,
-            'actividad_id'           => 68,
+            'actividad_id'           => 42,
             'evento_id'              => 3,
-
-            'cupos'                  => 40,
+            'cupos'                  => 24,
             'sobre_cupos'            => 0,
             'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
+            'hora_termino_id'        => 7
         ]);
-
-
-
-
         ActividadEvento::create([
-
             'id_actividad_evento'    => 14,
-            'actividad_id'           => 75,
-            'evento_id'              => 3,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 15,
-            'actividad_id'           => 76,
-            'evento_id'              => 3,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 16,
-            'actividad_id'           => 28,
-            'evento_id'              => 3,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 17,
-            'actividad_id'           => 78,
-            'evento_id'              => 3,
-
-            'cupos'                  => 80,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 18,
-            'actividad_id'           => 79,
-            'evento_id'              => 3,
-
-            'cupos'                  => 80,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 19,
-            'actividad_id'           => 25,
-            'evento_id'              => 3,
-
-            'cupos'                  => 14,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 20,
-            'actividad_id'           => 9,
-            'evento_id'              => 3,
-
-            'cupos'                  => 24,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 21,
-            'actividad_id'           => 69,
-            'evento_id'              => 3,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 22,
-            'actividad_id'           => 70,
-            'evento_id'              => 3,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 23,
-            'actividad_id'           => 84,
-            'evento_id'              => 3,
-
-            'cupos'                  => 100,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 24,
-            'actividad_id'           => 71,
-            'evento_id'              => 3,
-
-            'cupos'                  => 60,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 25,
-            'actividad_id'           => 72,
-            'evento_id'              => 3,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 26,
-            'actividad_id'           => 80,
-            'evento_id'              => 3,
-
-            'cupos'                  => 90,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 27,
-            'actividad_id'           => 68,
-            'evento_id'              => 3,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 28,
-            'actividad_id'           => 75,
-            'evento_id'              => 3,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 29,
-            'actividad_id'           => 81,
-            'evento_id'              => 3,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 30,
-            'actividad_id'           => 27,
-            'evento_id'              => 3,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 31,
-            'actividad_id'           => 79,
-            'evento_id'              => 3,
-
-            'cupos'                  => 50,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 32,
-            'actividad_id'           => 25,
-            'evento_id'              => 3,
-
-            'cupos'                  => 14,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 33,
-            'actividad_id'           => 72,
-            'evento_id'              => 3,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 34,
-            'actividad_id'           => 9,
-            'evento_id'              => 3,
-
-            'cupos'                  => 24,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 35,
-            'actividad_id'           => 70,
-            'evento_id'              => 3,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 36,
-            'actividad_id'           => 69,
-            'evento_id'              => 3,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 37,
-            'actividad_id'           => 84,
-            'evento_id'              => 3,
-
-            'cupos'                  => 100,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 38,
-            'actividad_id'           => 71,
-            'evento_id'              => 3,
-
-            'cupos'                  => 60,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 39,
-            'actividad_id'           => 82,
-            'evento_id'              => 3,
-
-            'cupos'                  => 60,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 40,
-            'actividad_id'           => 83,
-            'evento_id'              => 3,
-
-            'cupos'                  => 80,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        // SJ
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 41,
-            'actividad_id'           => 1,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
-        ]);
-
-         ActividadEvento::create([
-
-            'id_actividad_evento'    => 42,
-            'actividad_id'           => 5,
-            'evento_id'              => 1,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 43,
-            'actividad_id'           => 7,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 44,
-            'actividad_id'           => 9,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 2,
-            'hora_termino_id'        => 4,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 45,
-            'actividad_id'           => 12,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 46,
-            'actividad_id'           => 13,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 2,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 47,
-            'actividad_id'           => 14,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 2,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 48,
-            'actividad_id'           => 15,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 2,
-            'hora_termino_id'        => 4,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 49,
-            'actividad_id'           => 33,
-            'evento_id'              => 1,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 2,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 50,
-            'actividad_id'           => 17,
-            'evento_id'              => 1,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 2,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 51,
-            'actividad_id'           => 22,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 2,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 52,
-            'actividad_id'           => 19,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 2,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 53,
-            'actividad_id'           => 20,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 2,
-            'hora_termino_id'        => 4,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 54,
-            'actividad_id'           => 70,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 3,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 55,
-            'actividad_id'           => 28,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 4,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 56,
-            'actividad_id'           => 26,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 1,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 57,
-            'actividad_id'           => 2,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 3,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 58,
-            'actividad_id'           => 3,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 4,
-            'hora_termino_id'        => 6,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 59,
-            'actividad_id'           => 6,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 3,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 60,
-            'actividad_id'           => 9,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 3,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 61,
-            'actividad_id'           => 12,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 4,
-            'hora_termino_id'        => 6,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 62,
-            'actividad_id'           => 13,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 4,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 63,
-            'actividad_id'           => 14,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 4,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 64,
-            'actividad_id'           => 21,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 4,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 65,
-            'actividad_id'           => 22,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 4,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 66,
-            'actividad_id'           => 19,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 4,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 67,
-            'actividad_id'           => 36,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 4,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 68,
-            'actividad_id'           => 68,
-            'evento_id'              => 1,
-
-            'cupos'                  => -1,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 3,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 69,
-            'actividad_id'           => 70,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 3,
-            'hora_termino_id'        => 5,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 70,
-            'actividad_id'           => 27,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 4,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 71,
-            'actividad_id'           => 1,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 72,
-            'actividad_id'           => 8,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 73,
-            'actividad_id'           => 5,
-            'evento_id'              => 1,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 74,
-            'actividad_id'           => 7,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 75,
-            'actividad_id'           => 15,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 76,
-            'actividad_id'           => 20,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 77,
-            'actividad_id'           => 25,
-            'evento_id'              => 1,
-
-            'cupos'                  => 14,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 78,
-            'actividad_id'           => 70,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 79,
-            'actividad_id'           => 26,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 80,
-            'actividad_id'           => 2,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 81,
-            'actividad_id'           => 9,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 82,
-            'actividad_id'           => 33,
-            'evento_id'              => 1,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 83,
-            'actividad_id'           => 12,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 8,
-            'hora_termino_id'        => 10,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 84,
-            'actividad_id'           => 13,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 85,
-            'actividad_id'           => 14,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 86,
-            'actividad_id'           => 15,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 8,
-            'hora_termino_id'        => 10,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 87,
-            'actividad_id'           => 18,
-            'evento_id'              => 1,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 8,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 88,
-            'actividad_id'           => 21,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 89,
-            'actividad_id'           => 19,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 90,
-            'actividad_id'           => 20,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 8,
-            'hora_termino_id'        => 10,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 91,
-            'actividad_id'           => 28,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 10,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 92,
-            'actividad_id'           => 1,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 93,
-            'actividad_id'           => 5,
-            'evento_id'              => 1,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 94,
-            'actividad_id'           => 7,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 95,
-            'actividad_id'           => 9,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 96,
-            'actividad_id'           => 13,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 10,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 97,
-            'actividad_id'           => 14,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 10,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 98,
-            'actividad_id'           => 21,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 10,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 99,
-            'actividad_id'           => 22,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 10,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 100,
-            'actividad_id'           => 3,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 101,
-            'actividad_id'           => 36,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 10,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 102,
-            'actividad_id'           => 27,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 10,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 103,
-            'actividad_id'           => 25,
-            'evento_id'              => 1,
-
-            'cupos'                  => 14,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 104,
-            'actividad_id'           => 70,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 105,
-            'actividad_id'           => 68,
-            'evento_id'              => 1,
-
-            'cupos'                  => -1,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 106,
-            'actividad_id'           => 4,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 107,
-            'actividad_id'           => 3,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 108,
-            'actividad_id'           => 6,
-            'evento_id'              => 1,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 109,
-            'actividad_id'           => 12,
-            'evento_id'              => 1,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 110,
-            'actividad_id'           => 10,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 111,
-            'actividad_id'           => 15,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 112,
-            'actividad_id'           => 20,
-            'evento_id'              => 1,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-        // SJ 2
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 113,
-            'actividad_id'           => 4,
-            'evento_id'              => 2,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 114,
-            'actividad_id'           => 1,
-            'evento_id'              => 2,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 115,
-            'actividad_id'           => 5,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-        
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 116,
-            'actividad_id'           => 7,
-            'evento_id'              => 2,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-        
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 117,
-            'actividad_id'           => 31,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 118,
-            'actividad_id'           => 12,
-            'evento_id'              => 2,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-        
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 119,
-            'actividad_id'           => 13,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 6,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 120,
-            'actividad_id'           => 14,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 6,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 121,
-            'actividad_id'           => 15,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 6,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-        
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 122,
-            'actividad_id'           => 33,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 6,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 123,
-            'actividad_id'           => 17,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 6,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-        
-        
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 124,
-            'actividad_id'           => 22,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 6,
-
-        ]);
-
-        
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 125,
-            'actividad_id'           => 19,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 6,
-
-        ]);
-
-        
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 126,
-            'actividad_id'           => 20,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 6,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-        
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 127,
-            'actividad_id'           => 77,
-            'evento_id'              => 2,
-
-            'cupos'                  => 50,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 128,
-            'actividad_id'           => 68,
-            'evento_id'              => 2,
-
-            'cupos'                  => -1,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 6,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 129,
-            'actividad_id'           => 25,
-            'evento_id'              => 2,
-
-            'cupos'                  => 14,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 7,
-
-        ]);
-
-        
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 130,
-            'actividad_id'           => 37,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 5,
-            'hora_termino_id'        => 6,
-
-        ]);
-
-    
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 131,
-            'actividad_id'           => 2,
-            'evento_id'              => 2,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-        
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 132,
             'actividad_id'           => 39,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 133,
-            'actividad_id'           => 6,
-            'evento_id'              => 2,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 134,
-            'actividad_id'           => 30,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 135,
-            'actividad_id'           => 9,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 136,
-            'actividad_id'           => 32,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 8,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 137,
-            'actividad_id'           => 12,
-            'evento_id'              => 2,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 10,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 138,
-            'actividad_id'           => 22,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 8,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-
-                       
-        
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 139,
-            'actividad_id'           => 21,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 8,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-
-        
-        
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 140,
-            'actividad_id'           => 70,
-            'evento_id'              => 2,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 8,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 141,
-            'actividad_id'           => 36,
-            'evento_id'              => 2,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 8,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 142,
-            'actividad_id'           => 26,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 143,
-            'actividad_id'           => 13,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 8,
-            'hora_termino_id'        => 9,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 144,
-            'actividad_id'           => 14,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 8,
-            'hora_termino_id'        => 10,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 145,
-            'actividad_id'           => 28,
-            'evento_id'              => 2,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 7,
-            'hora_termino_id'        => 10,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 146,
-            'actividad_id'           => 4,
-            'evento_id'              => 2,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 147,
-            'actividad_id'           => 1,
-            'evento_id'              => 2,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 148,
-            'actividad_id'           => 5,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 149,
-            'actividad_id'           => 7,
-            'evento_id'              => 2,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 150,
-            'actividad_id'           => 9,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 151,
-            'actividad_id'           => 15,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 152,
-            'actividad_id'           => 20,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 11,
-
-        ]);
-
-
-        
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 153,
-            'actividad_id'           => 84,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-        
-        ActividadEvento::create([
-            'id_actividad_evento'    => 154,
-            'actividad_id'           => 25,
-            'evento_id'              => 2,
-
-            'cupos'                  => 14,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 10,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 155,
-            'actividad_id'           => 18,
-            'evento_id'              => 2,
-
-            'cupos'                  => 40,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 9,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 156,
-            'actividad_id'           => 68,
-            'evento_id'              => 2,
-
-            'cupos'                  => -1,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 10,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-        
-        ActividadEvento::create([
-            'id_actividad_evento'    => 157,
-            'actividad_id'           => 27,
-            'evento_id'              => 2,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 10,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 158,
-            'actividad_id'           => 2,
-            'evento_id'              => 2,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 159,
-            'actividad_id'           => 6,
-            'evento_id'              => 2,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-        
-   
-        ActividadEvento::create([
-            'id_actividad_evento'    => 160,
-            'actividad_id'           => 11,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 161,
-            'actividad_id'           => 12,
-            'evento_id'              => 2,
-
-            'cupos'                  => 20,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 162,
-            'actividad_id'           => 13,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 163,
-            'actividad_id'           => 14,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 164,
-            'actividad_id'           => 13,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 12,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 165,
-            'actividad_id'           => 14,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 12,
-            'hora_termino_id'        => 13,
-
-        ]);
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 166,
-            'actividad_id'           => 21,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 167,
-            'actividad_id'           => 19,
-            'evento_id'              => 2,
-
-            'cupos'                  => 15,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 12,
-
-        ]);
-
-
-        ActividadEvento::create([
-            'id_actividad_evento'    => 168,
-            'actividad_id'           => 70,
-            'evento_id'              => 2,
-
-            'cupos'                  => 30,
-            'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 11,
-            'hora_termino_id'        => 12,
-
-        ]);
-                                     
-
-        ActividadEvento::create([
-
-            'id_actividad_evento'    => 169,
-            'actividad_id'           => 71,
             'evento_id'              => 3,
-
+            'cupos'                  => 40,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 7
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 15,
+            'actividad_id'           => 7,
+            'evento_id'              => 3,
             'cupos'                  => 60,
             'sobre_cupos'            => 0,
-            'hora_inicio_id'         => 4,
-            'hora_termino_id'        => 8,
-
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 7
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 16,
+            'actividad_id'           => 25,
+            'evento_id'              => 3,
+            'cupos'                  => 14,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 7
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 17,
+            'actividad_id'           => 49,
+            'evento_id'              => 3,
+            'cupos'                  => 64,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 7
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 18,
+            'actividad_id'           => 3,
+            'evento_id'              => 3,
+            'cupos'                  => 30,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 8
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 19,
+            'actividad_id'           => 24,
+            'evento_id'              => 3,
+            'cupos'                  => 14,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 7
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 20,
+            'actividad_id'           => 10,
+            'evento_id'              => 3,
+            'cupos'                  => 128,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 7
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 21,
+            'actividad_id'           => 27,
+            'evento_id'              => 3,
+            'cupos'                  => 84,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 7
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 22,
+            'actividad_id'           => 17,
+            'evento_id'              => 3,
+            'cupos'                  => 30,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 8
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 23,
+            'actividad_id'           => 26,
+            'evento_id'              => 3,
+            'cupos'                  => 60,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 7
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 24,
+            'actividad_id'           => 8,
+            'evento_id'              => 3,
+            'cupos'                  => 30,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 7
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 25,
+            'actividad_id'           => 44,
+            'evento_id'              => 3,
+            'cupos'                  => 32,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 5,
+            'hora_termino_id'        => 7
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 26,
+            'actividad_id'           => 41,
+            'evento_id'              => 3,
+            'cupos'                  => 15,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 10,
+            'hora_termino_id'        => 12
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 27,
+            'actividad_id'           => 42,
+            'evento_id'              => 3,
+            'cupos'                  => 24,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 10,
+            'hora_termino_id'        => 12
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 28,
+            'actividad_id'           => 39,
+            'evento_id'              => 3,
+            'cupos'                  => 40,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 10,
+            'hora_termino_id'        => 12
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 29,
+            'actividad_id'           => 8,
+            'evento_id'              => 3,
+            'cupos'                  => 30,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 10,
+            'hora_termino_id'        => 12
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 30,
+            'actividad_id'           => 7,
+            'evento_id'              => 3,
+            'cupos'                  => 60,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 10,
+            'hora_termino_id'        => 12
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 31,
+            'actividad_id'           => 30,
+            'evento_id'              => 3,
+            'cupos'                  => 40,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 10,
+            'hora_termino_id'        => 12
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 32,
+            'actividad_id'           => 17,
+            'evento_id'              => 3,
+            'cupos'                  => 30,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 10,
+            'hora_termino_id'        => 13
+        ]);
+        ActividadEvento::create([
+            'id_actividad_evento'    => 33,
+            'actividad_id'           => 49,
+            'evento_id'              => 3,
+            'cupos'                  => 64,
+            'sobre_cupos'            => 0,
+            'hora_inicio_id'         => 10,
+            'hora_termino_id'        => 12
         ]);
 
-        
-
-        
-
-        
-        
-                
-
-        
-        
-        
-
-                       
-
-       
-
-        
-
-        
 
     }
 }
