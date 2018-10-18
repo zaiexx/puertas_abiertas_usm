@@ -2,7 +2,7 @@
 
 @section('header')
     
-    @include('Eventos.header')
+    @include('eventos.header')
 
 @endsection
 
