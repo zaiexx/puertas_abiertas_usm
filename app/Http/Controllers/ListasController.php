@@ -23,7 +23,7 @@ class ListasController extends Controller
     public function index()
     {
         
-        $actividades_eventos = \App\ActividadEvento::where('evento_id',1)->get();
+        $actividades_eventos = \App\ActividadEvento::where('evento_id',2)->get();
         $arr_actividades = array();
         
         $i = 0;

@@ -158,14 +158,14 @@ class InscripcionesController extends Controller
         $alumno = \App\Alumno::where("rut",$rut)->first();
         if ($alumno != null) {
 
-            $eventoInscrito = \App\EventoInscrito::where('alumno_id',$alumno->id_alumno)->where('evento_id',1)->get();
+            $eventoInscrito = \App\EventoInscrito::where('alumno_id',$alumno->id_alumno)->where('evento_id',2)->get();
             if (count($eventoInscrito) > 0) {
                     return redirect()->route('inscripciones.show',array($rut))->with('message', 'Alumno registrado correctamente, puede inscribir taller');
             }else {
 
                 $inscripcion = new \App\EventoInscrito;
                 $inscripcion->alumno_id = $alumno->id_alumno;
-                $inscripcion->evento_id = 1;
+                $inscripcion->evento_id = 2;
                 $inscripcion->save();
                 return redirect()->route('inscripciones.show',array($rut))->with('message', 'Alumno registrado correctamente, puede inscribir taller');
 

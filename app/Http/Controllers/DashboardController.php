@@ -100,7 +100,7 @@ class DashboardController extends Controller
         }
 
 
-        $actividades = \App\ActividadEvento::where('evento_id',1)->where('hora_inicio_id','>=',$hi)->where('hora_inicio_id','<',$ht)->get();
+        $actividades = \App\ActividadEvento::where('evento_id',2)->where('hora_inicio_id','>=',$hi)->where('hora_inicio_id','<',$ht)->get();
  
         return view('dashboard.show')->with('actividades', $actividades);
 
@@ -172,7 +172,7 @@ class DashboardController extends Controller
             $ht = 13;
         }
 
-        $actividades = \App\ActividadEvento::where('evento_id',1)->where(function ($query) use ($hi, $ht) {
+        $actividades = \App\ActividadEvento::where('evento_id',2)->where(function ($query) use ($hi, $ht) {
                     $query->where('hora_inicio_id',">=",$hi)->where('hora_inicio_id',"<",$ht);
                 })->get();
         if ($actividades != null) {
