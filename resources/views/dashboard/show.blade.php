@@ -13,7 +13,30 @@
 
     <div class="container-fluid">
         <div class="block-header">
-            <h2>Panel de Administración | Charlas, Rutas y Talleres</h2>
+            <h2><b>Panel de Administración | Charlas, Rutas y Talleres</b></br>&nbsp;
+                <div>
+                    <a href="{!! action('DashboardController@show', 1) !!}" title="Primer Bloque" class ="btn bg-indigo btn-xs waves-effect"><b>Ver Bloque 10:00-11:00</a></b>&nbsp;
+
+                    <a href="{!! action('DashboardController@show', 2) !!}" title="Segundo Bloque" class ="btn bg-indigo btn-xs waves-effect"><b>Ver Bloque 11:00-12:00
+                    </a></b>&nbsp;
+                    
+                    <a href="{!! action('DashboardController@show', 3) !!}" title="Tercer Bloque" class ="btn bg-indigo btn-xs waves-effect"><b>Ver Bloque 12:00-13:00</a></b>&nbsp;
+
+
+                    <a href="{!! action('DashboardController@show', 4) !!}" title="Cuarto Bloque" class ="btn bg-indigo btn-xs waves-effect"><b>Ver Bloque 13:00-14:00</a></b>&nbsp;
+
+                    <a href="{!! action('DashboardController@show', 5) !!}" title="Quinto Bloque" class ="btn bg-indigo btn-xs waves-effect"><b>Ver Bloque 14:00-15:00</a></b>&nbsp;
+                    
+                    <a href="{!! action('DashboardController@show', 6) !!}" title="Sexto Bloque" class ="btn bg-indigo btn-xs waves-effect"><b>Ver Bloque 15:00-16:00</a></b>&nbsp;
+
+                    <a href="{!! action('DashboardController@show', 0) !!}" title="Sexto Bloque" class ="btn bg-indigo btn-xs waves-effect"><b>Todos</a></b>&nbsp;
+
+
+
+
+                </div>
+
+            </h2>
         </div>
 
         <div class="row clearfix">
@@ -50,49 +73,45 @@
 
 
 
-                                @if ($actividad->actividades->carreras->id_carrera == 12 or $actividad->actividades->carreras->id_carrera == 5) 
-                                    <div class="body bg-cyan col-pink">
+                                @if ($actividad->actividades->carreras->id_carrera == 5) 
+                                    <div class="body bg-usm col-pink">
                                     <?php $col = "col-white"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 21  or $actividad->actividades->carreras->id_carrera == 3) 
+                                @elseif ($actividad->actividades->carreras->id_carrera == 3) 
+                                    <div class="body bg-light-blue">
+                                    <?php $col = "col-white"; ?>
+                                @elseif ($actividad->actividades->carreras->id_carrera == 7) 
+                                    <div class="body bg-light-green">
+                                    <?php $col = "col-white"; ?>
+                                @elseif ($actividad->actividades->carreras->id_carrera == 4) 
                                     <div class="body bg-indigo">
                                     <?php $col = "col-white"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 10 or $actividad->actividades->carreras->id_carrera == 7) 
-                                    <div class="body bg-lime">
-                                    <?php $col = "col-indigo"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 13) 
-                                    <div class="body bg-white">
-                                    <?php $col = "col-light-blue"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 7 or $actividad->actividades->carreras->id_carrera == 16) 
-                                    <div class="body bg-white">
-                                    <?php $col = "col-light-blue"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 15) 
-                                    <div class="body bg-white">
-                                    <?php $col = "col-light-blue"; ?>
-                                @elseif ($actividad->actividades->carreras->id_carrera == 25 or $actividad->actividades->carreras->id_carrera == 14) 
-                                    <div class="body bg-usm">
-                                    <?php $col = "col-white"; ?>                                
-
+                                @elseif ($actividad->actividades->carreras->id_carrera == 6) 
+                                    <div class="body bg-orange">
+                                    <?php $col = "col-white"; ?>
                                 @elseif ($actividad->actividades->carreras->id_carrera == 9) 
                                     <div class="body bg-pink">
-                                    <?php $col = "col-light-white"; ?> 
-
+                                    <?php $col = "col-white"; ?>
+                                @elseif ($actividad->actividades->carreras->id_carrera == 10) 
+                                    <div class="body bg-lime">
+                                    <?php $col = "col-black"; ?>                              
+                                @elseif ($actividad->actividades->carreras->id_carrera == 12) 
+                                    <div class="body bg-amber">
+                                    <?php $col = "col-black"; ?> 
                                 @elseif ($actividad->actividades->carreras->id_carrera == 1) 
                                     <div class="body bg-red">
+                                    <?php $col = "col-light-white"; ?>   
+                                @elseif ($actividad->actividades->carreras->id_carrera == 2) 
+                                    <div class="body bg-teal">
                                     <?php $col = "col-light-white"; ?> 
-                                                                   
-                                @elseif ($actividad->actividades->carreras->id_carrera == 24 or
-                                $actividad->actividades->carreras->id_carrera == 23) 
-                                    <div class="body bg-deep-purple">
-                                    <?php $col = "col-light-white"; ?> 
-                                                                   
-
-                                @elseif ($actividad->actividades->carreras->id_carrera == 6) 
-                                    <div class="body bg-deep-orange">
-                                    <?php $col = "col-light-white"; ?> 
-                                                                   
-                                @else
+                                @elseif ($actividad->actividades->carreras->id_carrera == 18) 
                                     <div class="body bg-cyan">
-                                    <?php $col = "col-light-white"; ?>                                
+                                    <?php $col = "col-black"; ?>
+                                @elseif ($actividad->actividades->carreras->id_carrera == 23 or $actividad->actividades->carreras->id_carrera == 24) 
+                                    <div class="body bg-white">
+                                    <?php $col = "col-indigo"; ?>                                                                    
+                                @else
+                                    <div class="body bg-indigo">
+                                    <?php $col = "col-white"; ?>                                
                                 @endif
 
                             @endif

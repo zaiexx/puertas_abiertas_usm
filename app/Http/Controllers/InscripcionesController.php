@@ -217,29 +217,28 @@ class InscripcionesController extends Controller
 
             if ($id_bloque == 1) {
                 $hi = 1;
-                $ht = 4;
+                $ht = 3;
             }else if ($id_bloque == 2) {
-                $hi = 4;
-                $ht = 8;
+                $hi = 3;
+                $ht = 5;
             }else if ($id_bloque == 3) {
-                $hi = 9;
-                $ht = 13;
+                $hi = 5;
+                $ht = 7;
             }else if ($id_bloque == 4) {
-                $hi = 27;
-                $ht = 28;
-            
+                $hi = 7;
+                $ht = 9;
             }else if ($id_bloque == 5) {
-                $hi = 29;
-                $ht = 30;
+                $hi = 9;
+                $ht = 11;
             }else {
-                $hi = 31;
-                $ht = 32;
+                $hi = 11;
+                $ht = 13;
             }
 
             $eventoInscrito = \App\EventoInscrito::where('alumno_id',$id_alumno)->orderBy('created_at','desc')->first();
             $id_evento = $eventoInscrito->evento_id;
             $actividades = \App\ActividadEvento::where('evento_id',$id_evento)->where(function ($query) use ($hi, $ht) {
-                    $query->where('hora_inicio_id',">=",$hi)->where('hora_inicio_id',"<=",$ht);
+                    $query->where('hora_inicio_id',">=",$hi)->where('hora_inicio_id',"<",$ht);
                 })->get();
                     
             return view('inscripciones.show')->with('actividades', $actividades)

@@ -26,9 +26,13 @@ class DashboardController extends Controller
 
 
         $bloques =  array();
-        $bloques[0] = "Bloque 1: 9:30 - 11:30";
-        $bloques[1] = "Bloque 2: 11:30 - 13:30";
-        $bloques[2] = "Bloque 3: 14:00 - 16:00";
+        $bloques[0] = "Todos"; 
+        $bloques[1] = "Bloque 1: 10:00 - 11:00";
+        $bloques[2] = "Bloque 2: 11:00 - 12:00";
+        $bloques[3] = "Bloque 3: 12:00 - 13:00";
+        $bloques[4] = "Bloque 4: 13:00 - 14:00";
+        $bloques[5] = "Bloque 5: 14:00 - 15:00";
+        $bloques[6] = "Bloque 6: 15:00 - 16:00";
 
         return view('dashboard.index')->with('bloques',$bloques);
     
@@ -70,26 +74,33 @@ class DashboardController extends Controller
      */
     public function show($id) {
 
+        $id_bloque = $id;
+
         $hi = 0;
         $ht = 22;
 
-        if ($id == 1) {
-            $hi = 0;
-            $ht = 7;
-
-        }else if ($id == 2) {
+        if ($id_bloque == 1) {
+            $hi = 1;
+            $ht = 3;
+        }else if ($id_bloque == 2) {
+            $hi = 3;
+            $ht = 5;
+        }else if ($id_bloque == 3) {
             $hi = 5;
-            $ht = 13;
-        }else if ($id == 3) {
+            $ht = 7;
+        }else if ($id_bloque == 4) {
+            $hi = 7;
+            $ht = 9;
+        }else if ($id_bloque == 5) {
             $hi = 9;
-            $ht = 14;
-        }else {
-
-            $hi = 0;
-            $ht = 22;
+            $ht = 11;
+        }else if ($id_bloque == 6){
+            $hi = 11;
+            $ht = 13;
         }
 
-        $actividades = \App\ActividadEvento::where('evento_id',1)->where('hora_inicio_id','>=',$hi)->where('hora_termino_id','<=',$ht)->get();
+
+        $actividades = \App\ActividadEvento::where('evento_id',1)->where('hora_inicio_id','>=',$hi)->where('hora_inicio_id','<',$ht)->get();
  
         return view('dashboard.show')->with('actividades', $actividades);
 
@@ -140,26 +151,29 @@ class DashboardController extends Controller
 
         $hi = 0;
         $ht = 22;
-        $id_bloque = $id_bloque+1;
         
-
         if ($id_bloque == 1) {
             $hi = 1;
-            $ht = 4;
-
+            $ht = 3;
         }else if ($id_bloque == 2) {
-            $hi = 4;
-            $ht = 8;
+            $hi = 3;
+            $ht = 5;
         }else if ($id_bloque == 3) {
+            $hi = 5;
+            $ht = 7;
+        }else if ($id_bloque == 4) {
+            $hi = 7;
+            $ht = 9;
+        }else if ($id_bloque == 5) {
             $hi = 9;
-            $ht = 14;
-        }else {
-            $hi = 0;
-            $ht = 22;
+            $ht = 11;
+        }else if ($id_bloque == 6){
+            $hi = 11;
+            $ht = 13;
         }
 
         $actividades = \App\ActividadEvento::where('evento_id',1)->where(function ($query) use ($hi, $ht) {
-                    $query->where('hora_inicio_id',">=",$hi)->where('hora_inicio_id',"<=",$ht);
+                    $query->where('hora_inicio_id',">=",$hi)->where('hora_inicio_id',"<",$ht);
                 })->get();
         if ($actividades != null) {
             return redirect()->route('dashboard.show',array($id_bloque))->with('actividades', $actividades);
