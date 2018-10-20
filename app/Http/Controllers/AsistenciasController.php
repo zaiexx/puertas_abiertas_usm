@@ -26,9 +26,13 @@ class AsistenciasController extends Controller
         $eventos = \App\Evento::all();
         $salida_eventos = array();
 
-
+        $i = 0;
         foreach ($eventos as $evento) {
-            $salida_eventos[$evento->id_evento] = $evento->nombre_evento;
+            $i++;
+            if ($i == 2) {
+                $salida_eventos[$evento->id_evento] = $evento->nombre_evento;
+            }
+
         }
 
         return view('asistencias.index')->with('eventos',$salida_eventos);
@@ -56,7 +60,7 @@ class AsistenciasController extends Controller
         $input = $request->all();
 
         $rut = $input["rut"];
-
+/*
         $rut_val = preg_replace('/[^k0-9]/i', '', $rut);
         $dv  = substr($rut, -1);
         $numero = substr($rut, 0, strlen($rut)-1);
@@ -70,12 +74,15 @@ class AsistenciasController extends Controller
         }
 
         $dvr = 11 - ($suma % 11);
-    
+        
         if($dvr == 11)
             $dvr = 0;
         if($dvr == 10)
             $dvr = 'K';
-        if($dvr == strtoupper($dv)) {
+*/
+        $flag = true;
+
+        if(!$flag) {
             return redirect()->route('validacion.show',array($input["id_evento"]))->withErrors(['Rut ingresado no valido']);
         }else {
 
