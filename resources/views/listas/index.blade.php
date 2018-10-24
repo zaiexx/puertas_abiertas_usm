@@ -59,6 +59,7 @@
                                     <thead>
                                         <tr>
                                             <th>Nombre Actividad</th>
+                                            <th>Día</th>
                                             <th>Hora Inicio</th>
                                             <th>hora Término</th>
                                             <th>Ver </th>
@@ -72,6 +73,7 @@
                                                 <tr class="odd pointer">
                                             @endif
                                             <td><span class="label bg-usm">{{$actividad[0]}}</span></td>
+                                            <td>{{$actividad[4]}}</td>
                                             <td>{{$actividad[1]}}</td>
                                             <td>{{$actividad[2]}}</td>
                                             <td>

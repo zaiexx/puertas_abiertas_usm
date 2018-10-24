@@ -23,16 +23,32 @@ class ListasController extends Controller
     public function index()
     {
         
-        $actividades_eventos = \App\ActividadEvento::where('evento_id',2)->get();
+
+//        $actividades_eventos = \App\ActividadEvento::where('evento_id',2)->get();
+
+        $actividades_eventos = \App\ActividadEvento::all();
         $arr_actividades = array();
         
         $i = 0;
-
+        $evento = "";
         foreach ($actividades_eventos as $actividad_evento) {
+
+            switch ($actividad_evento->evento_id) {
+                case 1:
+                    $evento = "Viernes";
+                    break;
+                case 2:
+                    $evento = "Sábado";
+                    break;
+                case 3:
+                    $evento = "Jueves";
+                    break;
+            }
+
             $hora_inicio = $actividad_evento->horario_inicio->horario;
             $hora_termino = $actividad_evento->horario_termino->horario;
 
-            $arr_actividades[$actividad_evento->id_actividad_evento] = array($actividad_evento->actividades->nombre_actividad, $hora_inicio, $hora_termino, ++$i);
+            $arr_actividades[$actividad_evento->id_actividad_evento] = array($actividad_evento->actividades->nombre_actividad, $hora_inicio, $hora_termino, ++$i, $evento);
         }
 
         return view('listas.index')->with('actividades',$arr_actividades);
